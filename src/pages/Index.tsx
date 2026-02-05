@@ -61,14 +61,14 @@ const Index = () => {
           muted
           loop
           playsInline
-          className="absolute top-1/2 left-1/2 min-w-full min-h-full w-auto h-auto -translate-x-1/2 -translate-y-1/2 object-cover opacity-40"
+          className="absolute top-1/2 left-1/2 min-w-full min-h-full w-auto h-auto -translate-x-1/2 -translate-y-1/2 object-cover opacity-70"
         >
           <source src="/videos/background.mp4" type="video/mp4" />
         </video>
       </div>
       
       {/* Video Overlay */}
-      <div className="fixed inset-0 z-[2] bg-[radial-gradient(circle,_rgba(0,29,69,0.4)_0%,_rgba(0,0,0,0.95)_100%)]" />
+      <div className="fixed inset-0 z-[2] bg-[radial-gradient(circle,_rgba(0,29,69,0.2)_0%,_rgba(0,0,0,0.75)_100%)]" />
       
       {/* Particles */}
       <ParticlesCanvas />
