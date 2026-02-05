@@ -55,7 +55,7 @@ const Index = () => {
       <div className={`fixed inset-0 z-[999] pointer-events-none transition-all duration-700 ${portalActive ? 'opacity-100 scale-[3] backdrop-blur-[20px] bg-primary/30' : 'opacity-0 scale-75 backdrop-blur-0 bg-primary/10'}`} />
       
       {/* Background Video */}
-      <div className="fixed inset-0 z-[-3] overflow-hidden bg-background">
+      <div className="fixed inset-0 z-[1] overflow-hidden bg-background">
         <video
           autoPlay
           muted
@@ -67,13 +67,14 @@ const Index = () => {
         </video>
       </div>
       
+      {/* Video Overlay */}
+      <div className="fixed inset-0 z-[2] bg-[radial-gradient(circle,_rgba(0,29,69,0.4)_0%,_rgba(0,0,0,0.95)_100%)]" />
+      
+      {/* Particles */}
       <ParticlesCanvas />
       
-      {/* Video Overlay */}
-      <div className="fixed inset-0 z-[-2] bg-[radial-gradient(circle,_rgba(0,29,69,0.4)_0%,_rgba(0,0,0,0.95)_100%)]" />
-      
       {/* Parallax Background */}
-      <div ref={parallaxRef} className="fixed inset-0 z-0 pointer-events-none">
+      <div ref={parallaxRef} className="fixed inset-0 z-[4] pointer-events-none">
         <div className="p-circle absolute w-[300px] h-[300px] top-[10%] left-[5%] rounded-full bg-gradient-to-br from-primary to-navy blur-[60px] opacity-10" data-speed="0.15" />
         <div className="p-circle absolute w-[400px] h-[400px] bottom-[10%] right-[5%] rounded-full bg-gradient-to-br from-primary to-navy blur-[60px] opacity-10" data-speed="0.25" />
       </div>
