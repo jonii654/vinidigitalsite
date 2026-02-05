@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import vdLogo from "@/assets/vd-logo.jpg";
 
 const Header = () => {
   const navLinks = [
@@ -13,9 +14,7 @@ const Header = () => {
     <header className="fixed w-full z-50 bg-navy/80 backdrop-blur-lg border-b border-foreground/5">
       <div className="container mx-auto px-4 py-2 flex justify-between items-center">
         <div className="h-8 md:h-10 flex items-center">
-          <span className="text-xl font-black text-foreground tracking-tighter">
-            Vini<span className="text-primary">Digital</span>
-          </span>
+          <img src={vdLogo} alt="ViniDigital Logo" className="h-full w-auto object-contain rounded" />
         </div>
         
         <nav className="hidden lg:flex space-x-6 text-[10px] font-black uppercase tracking-widest text-muted-foreground">

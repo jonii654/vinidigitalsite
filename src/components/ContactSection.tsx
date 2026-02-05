@@ -1,7 +1,12 @@
 import { MapPin, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import vdLogo from "@/assets/vd-logo.jpg";
 
-const ContactSection = () => {
+interface ContactSectionProps {
+  onPortalClick?: () => void;
+}
+
+const ContactSection = ({ onPortalClick }: ContactSectionProps) => {
   return (
     <section id="contato" className="py-24 bg-transparent relative z-10">
       <div className="container mx-auto px-6">
@@ -32,16 +37,12 @@ const ContactSection = () => {
                 </div>
               </div>
 
-              <a
-                href="https://wa.me/5581988845760?text=Vim%20do%20seu%20site%20e%20quero%20contratar%20seus%20serviços!"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block"
+              <Button 
+                onClick={onPortalClick}
+                className="shine-effect w-full py-5 rounded-2xl font-black text-lg uppercase tracking-widest shadow-2xl bg-gradient-to-r from-primary to-orange-600 text-primary-foreground border border-foreground/20 hover:opacity-90 cursor-pointer"
               >
-                <Button className="shine-effect w-full py-5 rounded-2xl font-black text-lg uppercase tracking-widest shadow-2xl bg-gradient-to-r from-primary to-orange-600 text-primary-foreground border border-foreground/20 hover:opacity-90">
-                  SOLICITAR ORÇAMENTO
-                </Button>
-              </a>
+                SOLICITAR ORÇAMENTO
+              </Button>
             </div>
             
             <div className="relative min-h-[350px] overflow-hidden">
@@ -55,9 +56,7 @@ const ContactSection = () => {
 
         {/* Logo de Fechamento */}
         <div className="mt-20 reveal flex flex-col items-center">
-          <div className="h-24 w-24 md:h-32 md:w-32 rounded-full bg-gradient-to-br from-primary/20 to-navy flex items-center justify-center border border-primary/30">
-            <span className="text-4xl font-black text-primary italic">VD</span>
-          </div>
+          <img src={vdLogo} alt="ViniDigital Emblem" className="h-24 w-24 md:h-32 md:w-32 object-contain rounded-full border border-primary/30" />
           <p className="text-primary/30 text-[9px] font-black tracking-[0.4em] uppercase italic mt-4">
             Segue em frente até dar certo
           </p>
