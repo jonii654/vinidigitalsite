@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
@@ -14,12 +14,16 @@ const Index = () => {
   const parallaxRef = useRef<HTMLDivElement>(null);
   const [portalActive, setPortalActive] = useState(false);
 
-  const triggerPortal = () => {
+  const triggerPortal = useCallback(() => {
+    if (portalActive) return;
     setPortalActive(true);
+    const whatsappUrl = "https://wa.me/5581988845760?text=Vim%20do%20seu%20site%20e%20quero%20contratar%20seus%20serviços!";
+    
     setTimeout(() => {
-      window.location.href = "https://wa.me/5581988845760?text=Vim%20do%20seu%20site%20e%20quero%20contratar%20seus%20serviços!";
+      setPortalActive(false);
+      window.open(whatsappUrl, '_blank');
     }, 800);
-  };
+  }, [portalActive]);
 
   useEffect(() => {
     const handleScroll = () => {
