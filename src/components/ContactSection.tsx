@@ -1,6 +1,7 @@
 import { MapPin, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import vdLogo from "@/assets/vd-logo.jpg";
+import viniciusPhoto from "@/assets/vinicius-photo.jpg";
 
 interface ContactSectionProps {
   onPortalClick?: () => void;
@@ -46,17 +47,19 @@ const ContactSection = ({ onPortalClick }: ContactSectionProps) => {
             </div>
             
             <div className="relative min-h-[350px] overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-navy flex items-center justify-center">
-                <span className="text-8xl font-black text-foreground/10 italic">V</span>
-              </div>
-              <div className="absolute inset-0 bg-gradient-to-r from-navy to-transparent" />
+              <img 
+                src={viniciusPhoto} 
+                alt="Vinícius" 
+                className="absolute inset-0 w-full h-full object-cover object-top"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-navy/80 to-transparent" />
             </div>
           </div>
         </div>
 
         {/* Logo de Fechamento */}
         <div className="mt-20 reveal flex flex-col items-center">
-          <img src={vdLogo} alt="ViniDigital Emblem" className="h-24 w-24 md:h-32 md:w-32 object-contain rounded-full border border-primary/30" />
+          <img src={vdLogo} alt="ViniDigital Emblem" className="h-32 w-32 md:h-48 md:w-48 object-contain rounded-full border-2 border-primary/50 -rotate-90 shadow-2xl" />
           <p className="text-primary/30 text-[9px] font-black tracking-[0.4em] uppercase italic mt-4">
             Segue em frente até dar certo
           </p>
