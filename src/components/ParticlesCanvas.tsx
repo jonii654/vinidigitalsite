@@ -61,7 +61,7 @@ const ParticlesCanvas = () => {
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 z-[-1] pointer-events-none"
+      className="fixed inset-0 z-[3] pointer-events-none"
     />
   );
 };
