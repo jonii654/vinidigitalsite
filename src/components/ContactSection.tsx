@@ -50,7 +50,7 @@ const ContactSection = ({ onPortalClick }: ContactSectionProps) => {
               <img 
                 src={viniciusPhoto} 
                 alt="Vinícius" 
-                className="absolute inset-0 w-full h-full object-cover object-top"
+                className="absolute inset-0 w-full h-full object-cover object-center scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-navy/80 to-transparent" />
             </div>
@@ -59,7 +59,7 @@ const ContactSection = ({ onPortalClick }: ContactSectionProps) => {
 
         {/* Logo de Fechamento */}
         <div className="mt-20 reveal flex flex-col items-center">
-          <img src={vdLogo} alt="ViniDigital Emblem" className="h-32 w-32 md:h-48 md:w-48 object-contain rounded-full border-2 border-primary/50 -rotate-90 shadow-2xl" />
+          <img src={vdLogo} alt="ViniDigital Emblem" className="h-32 w-32 md:h-48 md:w-48 object-contain rounded-full border-2 border-primary/50 rotate-90 shadow-2xl" />
           <p className="text-primary/30 text-[9px] font-black tracking-[0.4em] uppercase italic mt-4">
             Segue em frente até dar certo
           </p>
