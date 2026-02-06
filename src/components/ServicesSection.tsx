@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import cftvWork from "@/assets/cftv-work.jpg";
 
 const ServicesSection = () => {
   const services = [
@@ -14,6 +15,8 @@ const ServicesSection = () => {
       ctaLink: "https://wa.me/5581988845760?text=Olá%20ViniDigital%2Cquero%20fala%20sobre%20Cftv%20e%20Orçamentos!",
       variant: "primary" as const,
       reverse: false,
+      image: cftvWork,
+      imageAlt: "Instalação profissional de CFTV",
     },
     {
       tag: "Infraestrutura",
@@ -27,6 +30,8 @@ const ServicesSection = () => {
       ctaLink: "https://wa.me/5581988845760?text=Olá%20ViniDigital%2Cquero%20falar%20sobre%20Elétrica%20é%20Orçamentos!",
       variant: "outline" as const,
       reverse: true,
+      image: null,
+      imageAlt: "",
     },
     {
       tag: "Futuro & Luxo",
@@ -40,6 +45,38 @@ const ServicesSection = () => {
       ctaLink: "https://wa.me/5581988845760?text=Olá%20ViniDigital%2Cquero%20falar%20sobre%20instalação%20de%20alexa%20e%20orçamentos!",
       variant: "secondary" as const,
       reverse: false,
+      image: null,
+      imageAlt: "",
+    },
+    {
+      tag: "Energia Limpa",
+      title: "Sistema Solar",
+      features: [
+        "Instalação de painéis solares fotovoltaicos para redução de até 95% na conta de energia.",
+        "Projetos personalizados com análise de consumo e dimensionamento ideal para sua residência ou empresa.",
+        "Manutenção preventiva e monitoramento remoto da geração de energia em tempo real.",
+      ],
+      cta: "SIMULAR ECONOMIA",
+      ctaLink: "https://wa.me/5581988845760?text=Olá%20ViniDigital%2Cquero%20falar%20sobre%20Sistema%20Solar%20e%20Orçamentos!",
+      variant: "primary" as const,
+      reverse: true,
+      image: null,
+      imageAlt: "",
+    },
+    {
+      tag: "Tecnologia Aérea",
+      title: "Trabalhos com Drones",
+      features: [
+        "Inspeção predial com imagens aéreas de alta resolução para laudos técnicos e manutenção preventiva.",
+        "Fotos e vídeos profissionais aéreos para eventos, imóveis, construções e marketing.",
+        "Mapeamento, monitoramento de obras e serviços especializados com drones de última geração.",
+      ],
+      cta: "SOLICITAR VOO",
+      ctaLink: "https://wa.me/5581988845760?text=Olá%20ViniDigital%2Cquero%20falar%20sobre%20Trabalhos%20com%20Drones%20e%20Orçamentos!",
+      variant: "outline" as const,
+      reverse: false,
+      image: null,
+      imageAlt: "",
     },
   ];
 
@@ -62,11 +99,22 @@ const ServicesSection = () => {
               }`}
             >
               <div className="h-[350px] relative rounded-2xl overflow-hidden border border-primary/20 bg-navy">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-navy flex items-center justify-center">
-                  <span className="text-4xl font-black text-foreground/10 italic uppercase">
-                    {service.title.split(' ')[0]}
-                  </span>
-                </div>
+                {service.image ? (
+                  <>
+                    <img 
+                      src={service.image} 
+                      alt={service.imageAlt} 
+                      className="absolute inset-0 w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-navy/60 to-transparent" />
+                  </>
+                ) : (
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-navy flex items-center justify-center">
+                    <span className="text-4xl font-black text-foreground/10 italic uppercase">
+                      {service.title.split(' ')[0]}
+                    </span>
+                  </div>
+                )}
               </div>
               
               <div className="space-y-4">

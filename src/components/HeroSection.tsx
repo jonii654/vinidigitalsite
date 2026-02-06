@@ -8,8 +8,8 @@ const HeroSection = () => {
           ViniDigital Elite 2026
         </span>
         
-        <h1 className="text-5xl md:text-7xl font-black mb-4 leading-[0.9] tracking-tighter uppercase italic text-foreground">
-          O FUTURO <br /> EM <span className="text-primary">SEGURANÇA.</span>
+        <h1 className="text-4xl md:text-6xl font-black mb-4 leading-[0.9] tracking-tighter uppercase italic text-foreground">
+          VINIDIGITAL <br /> SEGURANÇA & <span className="text-primary">TECNOLOGIA</span> <br /> PRA VOCÊ.
         </h1>
         
         <p className="text-sm md:text-lg text-muted-foreground mb-10 max-w-xl mx-auto font-light">
