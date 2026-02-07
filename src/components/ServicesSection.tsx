@@ -98,24 +98,26 @@ const ServicesSection = () => {
   ];
 
   return (
-    <section id="servicos" className="py-24 bg-background/60 relative z-10 backdrop-blur-sm">
-      <div className="container mx-auto px-6">
-        <div className="mb-20 reveal text-center">
-          <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter italic text-foreground">
+    <section id="servicos" className="py-16 md:py-24 bg-background/60 relative z-10 backdrop-blur-sm">
+      <div className="container mx-auto px-4 md:px-6">
+        <div className="mb-12 md:mb-20 reveal text-center">
+          <h2 className="text-2xl md:text-5xl font-black uppercase tracking-tighter italic text-foreground">
             Nosso <span className="text-primary">Serviço.</span>
           </h2>
           <div className="w-12 h-1 bg-primary mx-auto mt-4" />
         </div>
 
-        <div className="max-w-4xl mx-auto space-y-32">
+        <div className="max-w-4xl mx-auto space-y-20 md:space-y-32">
           {services.map((service, index) => (
             <div
               key={index}
-              className={`grid md:grid-cols-2 gap-10 items-center reveal group ${
+              className={`grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 items-center ${
                 service.reverse ? "md:[&>*:first-child]:order-last" : ""
               }`}
             >
-              <div className="h-[350px] relative rounded-2xl overflow-hidden border border-primary/20 bg-navy">
+              <div className={`h-[250px] md:h-[350px] relative rounded-2xl overflow-hidden border border-primary/20 bg-navy ${
+                service.reverse ? "reveal-right" : "reveal-left"
+              }`}>
                 {service.images.length > 1 ? (
                   <ServiceCarousel items={service.images} />
                 ) : service.images.length === 1 ? (
@@ -125,6 +127,7 @@ const ServicesSection = () => {
                         src={service.images[0].src}
                         alt={service.images[0].alt}
                         className="absolute inset-0 w-full h-full object-cover"
+                        loading="lazy"
                       />
                     ) : (
                       <video
@@ -145,21 +148,23 @@ const ServicesSection = () => {
                 )}
               </div>
 
-              <div className="space-y-4">
+              <div className={`space-y-3 md:space-y-4 ${
+                service.reverse ? "reveal-left stagger-1" : "reveal-right stagger-1"
+              }`}>
                 <span className="text-primary font-black text-[9px] tracking-[0.4em] uppercase block">
                   {service.tag}
                 </span>
-                <h3 className="text-2xl md:text-3xl font-black uppercase italic text-foreground">
+                <h3 className="text-xl md:text-3xl font-black uppercase italic text-foreground">
                   {service.title}
                 </h3>
-                <div className="text-muted-foreground text-sm leading-relaxed font-light space-y-2">
+                <div className="text-muted-foreground text-xs md:text-sm leading-relaxed font-light space-y-2">
                   {service.features.map((feature, i) => (
                     <p key={i}>. {feature}</p>
                   ))}
                 </div>
                 <a href={service.ctaLink} target="_blank" rel="noopener noreferrer">
                   <Button
-                    className={`px-8 py-3 rounded-xl font-black text-xs shadow-lg mt-4 ${
+                    className={`px-6 md:px-8 py-3 rounded-xl font-black text-xs shadow-lg mt-4 w-full md:w-auto ${
                       service.variant === "primary"
                         ? "bg-primary text-primary-foreground hover:bg-primary/90"
                         : service.variant === "outline"
