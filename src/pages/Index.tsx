@@ -92,7 +92,7 @@ const Index = () => {
       </main>
 
       <Footer className={`transition-all duration-700 ${portalActive ? 'blur-[10px] scale-110' : ''}`} />
-      <WhatsAppButton />
+      {/* WhatsApp button removed */}
     </div>
   );
 };
