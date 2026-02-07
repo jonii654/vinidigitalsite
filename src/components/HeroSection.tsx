@@ -16,23 +16,9 @@ const HeroSection = () => {
           Consolidando excelência em CFTV, Elétrica e Automação. A segurança que o seu património exige, com a inovação de 2026.
         </p>
         
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <a
-            href="https://wa.me/5581988845760?text=Vim%20do%20seu%20site%20e%20quero%20contratar%20seus%20serviços!"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Button size="lg" className="glow-pulse bg-primary text-primary-foreground hover:bg-primary/90 px-10 py-3.5 rounded-xl font-black text-sm shadow-xl">
-              FALAR COM VINÍCIUS
-            </Button>
-          </a>
-          
+        <div className="flex justify-center">
           <a href="#servicos">
-            <Button 
-              variant="outline" 
-              size="lg" 
-              className="bg-foreground/5 border-foreground/10 text-foreground px-10 py-3.5 rounded-xl font-black text-sm backdrop-blur-md hover:bg-foreground/10"
-            >
+            <Button size="lg" className="glow-pulse bg-primary text-primary-foreground hover:bg-primary/90 px-10 py-3.5 rounded-xl font-black text-sm shadow-xl">
               VER SERVIÇOS
             </Button>
           </a>
