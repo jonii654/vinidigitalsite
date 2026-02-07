@@ -137,7 +137,7 @@ const ServicesSection = () => {
                         className="absolute inset-0 w-full h-full object-cover"
                       />
                     )}
-                    <div className="absolute inset-0 bg-gradient-to-t from-navy/60 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent" />
                   </>
                 ) : (
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-navy flex items-center justify-center">

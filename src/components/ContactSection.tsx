@@ -52,7 +52,7 @@ const ContactSection = ({ onPortalClick }: ContactSectionProps) => {
                 alt="Vinícius" 
                 className="absolute inset-0 w-full h-full object-cover object-center scale-110"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-navy/80 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-r from-background/60 to-transparent" />
             </div>
           </div>
         </div>
