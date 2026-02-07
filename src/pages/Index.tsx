@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import { useState, useCallback } from "react";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
+import ShowcaseBanner from "@/components/ShowcaseBanner";
 import AboutSection from "@/components/AboutSection";
 import WorksSection from "@/components/WorksSection";
 import ServicesSection from "@/components/ServicesSection";
@@ -83,6 +84,7 @@ const Index = () => {
       
       <main className={`transition-all duration-700 ${portalActive ? 'blur-[10px] scale-110' : ''}`}>
         <HeroSection />
+        <ShowcaseBanner />
         <AboutSection />
         <WorksSection />
         <ServicesSection />

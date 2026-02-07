@@ -1,5 +1,16 @@
 import { Button } from "@/components/ui/button";
+import ServiceCarousel from "@/components/ServiceCarousel";
 import cftvWork from "@/assets/cftv-work.jpg";
+import eletricaWork from "@/assets/eletrica-work.jpg";
+import alexaWork1 from "@/assets/alexa-work-1.jpg";
+import alexaWork2 from "@/assets/alexa-work-2.jpg";
+import solarWork1 from "@/assets/solar-work-1.jpg";
+import solarWork2 from "@/assets/solar-work-2.jpg";
+import solarWork3 from "@/assets/solar-work-3.jpg";
+import droneWork1 from "@/assets/drone-work-1.jpg";
+import droneWork2 from "@/assets/drone-work-2.jpg";
+
+type MediaItem = { type: "image" | "video"; src: string; alt: string };
 
 const ServicesSection = () => {
   const services = [
@@ -15,8 +26,7 @@ const ServicesSection = () => {
       ctaLink: "https://wa.me/5581988845760?text=Olá%20ViniDigital%2Cquero%20fala%20sobre%20Cftv%20e%20Orçamentos!",
       variant: "primary" as const,
       reverse: false,
-      image: cftvWork,
-      imageAlt: "Instalação profissional de CFTV",
+      images: [{ type: "image" as const, src: cftvWork, alt: "Instalação profissional de CFTV" }],
     },
     {
       tag: "Infraestrutura",
@@ -30,8 +40,7 @@ const ServicesSection = () => {
       ctaLink: "https://wa.me/5581988845760?text=Olá%20ViniDigital%2Cquero%20falar%20sobre%20Elétrica%20é%20Orçamentos!",
       variant: "outline" as const,
       reverse: true,
-      image: null,
-      imageAlt: "",
+      images: [{ type: "image" as const, src: eletricaWork, alt: "Trabalho de elétrica profissional" }],
     },
     {
       tag: "Futuro & Luxo",
@@ -45,8 +54,10 @@ const ServicesSection = () => {
       ctaLink: "https://wa.me/5581988845760?text=Olá%20ViniDigital%2Cquero%20falar%20sobre%20instalação%20de%20alexa%20e%20orçamentos!",
       variant: "secondary" as const,
       reverse: false,
-      image: null,
-      imageAlt: "",
+      images: [
+        { type: "image" as const, src: alexaWork1, alt: "Smart Home com Alexa Echo Dot" },
+        { type: "image" as const, src: alexaWork2, alt: "Instalação Smart Home Alexa" },
+      ],
     },
     {
       tag: "Energia Limpa",
@@ -60,8 +71,11 @@ const ServicesSection = () => {
       ctaLink: "https://wa.me/5581988845760?text=Olá%20ViniDigital%2Cquero%20falar%20sobre%20Sistema%20Solar%20e%20Orçamentos!",
       variant: "primary" as const,
       reverse: true,
-      image: null,
-      imageAlt: "",
+      images: [
+        { type: "image" as const, src: solarWork1, alt: "Instalação de painéis solares" },
+        { type: "image" as const, src: solarWork2, alt: "Sistema solar fotovoltaico" },
+        { type: "image" as const, src: solarWork3, alt: "Painel solar instalado" },
+      ],
     },
     {
       tag: "Tecnologia Aérea",
@@ -75,8 +89,11 @@ const ServicesSection = () => {
       ctaLink: "https://wa.me/5581988845760?text=Olá%20ViniDigital%2Cquero%20falar%20sobre%20Trabalhos%20com%20Drones%20e%20Orçamentos!",
       variant: "outline" as const,
       reverse: false,
-      image: null,
-      imageAlt: "",
+      images: [
+        { type: "image" as const, src: droneWork1, alt: "Trabalho com drone" },
+        { type: "image" as const, src: droneWork2, alt: "Inspeção aérea com drone" },
+        { type: "video" as const, src: "/videos/drone-video.mp4", alt: "Vídeo de trabalho com drone" },
+      ],
     },
   ];
 
@@ -99,24 +116,35 @@ const ServicesSection = () => {
               }`}
             >
               <div className="h-[350px] relative rounded-2xl overflow-hidden border border-primary/20 bg-navy">
-                {service.image ? (
+                {service.images.length > 1 ? (
+                  <ServiceCarousel items={service.images} />
+                ) : service.images.length === 1 ? (
                   <>
-                    <img 
-                      src={service.image} 
-                      alt={service.imageAlt} 
-                      className="absolute inset-0 w-full h-full object-cover"
-                    />
+                    {service.images[0].type === "image" ? (
+                      <img
+                        src={service.images[0].src}
+                        alt={service.images[0].alt}
+                        className="absolute inset-0 w-full h-full object-cover"
+                      />
+                    ) : (
+                      <video
+                        src={service.images[0].src}
+                        controls
+                        playsInline
+                        className="absolute inset-0 w-full h-full object-cover"
+                      />
+                    )}
                     <div className="absolute inset-0 bg-gradient-to-t from-navy/60 to-transparent" />
                   </>
                 ) : (
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-navy flex items-center justify-center">
                     <span className="text-4xl font-black text-foreground/10 italic uppercase">
-                      {service.title.split(' ')[0]}
+                      {service.title.split(" ")[0]}
                     </span>
                   </div>
                 )}
               </div>
-              
+
               <div className="space-y-4">
                 <span className="text-primary font-black text-[9px] tracking-[0.4em] uppercase block">
                   {service.tag}
