@@ -1,6 +1,6 @@
 import { MapPin, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import vdLogo from "@/assets/vd-logo.jpg";
+import vdLogo from "@/assets/vd-logo-new.jpg";
 import viniciusPhoto from "@/assets/vinicius-photo.jpg";
 
 interface ContactSectionProps {
@@ -59,7 +59,7 @@ const ContactSection = ({ onPortalClick }: ContactSectionProps) => {
 
         {/* Logo de Fechamento */}
         <div className="mt-20 reveal flex flex-col items-center">
-          <img src={vdLogo} alt="ViniDigital Emblem" className="h-32 w-32 md:h-48 md:w-48 object-contain rounded-full border-2 border-primary/50 rotate-90 shadow-2xl" />
+          <img src={vdLogo} alt="ViniDigital Emblem" className="h-32 w-32 md:h-48 md:w-48 object-contain rounded-full border-2 border-primary/50 shadow-2xl" />
           <p className="text-primary/30 text-[9px] font-black tracking-[0.4em] uppercase italic mt-4">
             Segue em frente até dar certo
           </p>

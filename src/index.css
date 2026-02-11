@@ -137,6 +137,11 @@ All colors MUST be HSL.
   .stagger-2 { transition-delay: 0.2s; }
   .stagger-3 { transition-delay: 0.3s; }
   
+  .parallax-section {
+    transform: translateZ(0);
+    will-change: transform;
+  }
+  
   .tag-2026 {
     background: linear-gradient(90deg, hsl(var(--primary) / 0.2) 0%, transparent 100%);
     border-left: 2px solid hsl(var(--primary));
