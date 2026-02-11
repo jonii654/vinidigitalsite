@@ -2,6 +2,9 @@ import { Button } from "@/components/ui/button";
 import ServiceCarousel from "@/components/ServiceCarousel";
 import cftvWork from "@/assets/cftv-work.jpg";
 import eletricaWork from "@/assets/eletrica-work.jpg";
+import eletricaWork2 from "@/assets/eletrica-work-2.jpg";
+import eletricaWork3 from "@/assets/eletrica-work-3.jpg";
+import eletricaWork4 from "@/assets/eletrica-work-4.jpg";
 import alexaWork1 from "@/assets/alexa-work-1.jpg";
 import alexaWork2 from "@/assets/alexa-work-2.jpg";
 import solarWork1 from "@/assets/solar-work-1.jpg";
@@ -9,6 +12,7 @@ import solarWork2 from "@/assets/solar-work-2.jpg";
 import solarWork3 from "@/assets/solar-work-3.jpg";
 import droneWork1 from "@/assets/drone-work-1.jpg";
 import droneWork2 from "@/assets/drone-work-2.jpg";
+import droneWork3 from "@/assets/drone-work-3.jpg";
 
 type MediaItem = { type: "image" | "video"; src: string; alt: string };
 
@@ -30,17 +34,22 @@ const ServicesSection = () => {
     },
     {
       tag: "Infraestrutura",
-      title: "Elétrica profissional",
+      title: "Serviço Elétrica",
       features: [
         "Execução de projetos elétricos seguindo rigorosamente as normas técnicas de segurança.",
         "Montagem de quadros de força e balanceamento de carga para evitar desperdício de energia.",
         "Iluminação técnica e manutenção corretiva para eliminar riscos de curto-circuito.",
       ],
-      cta: "REVISÃO TÉCNICA",
+      cta: "SOLICITAR ORÇAMENTO",
       ctaLink: "https://wa.me/5581988845760?text=Olá%20ViniDigital%2Cquero%20falar%20sobre%20Elétrica%20é%20Orçamentos!",
       variant: "outline" as const,
       reverse: true,
-      images: [{ type: "image" as const, src: eletricaWork, alt: "Trabalho de elétrica profissional" }],
+      images: [
+        { type: "image" as const, src: eletricaWork, alt: "Trabalho de elétrica profissional" },
+        { type: "image" as const, src: eletricaWork2, alt: "Eletricista com multímetro" },
+        { type: "image" as const, src: eletricaWork3, alt: "Montagem de quadro elétrico" },
+        { type: "image" as const, src: eletricaWork4, alt: "Técnico eletricista com ferramentas" },
+      ],
     },
     {
       tag: "Futuro & Luxo",
@@ -50,7 +59,7 @@ const ServicesSection = () => {
         "Criação de rotinas inteligentes que adaptam sua casa ao seu estilo de vida automaticamente.",
         "Integração total entre dispositivos para máximo conforto, segurança e economia de tempo.",
       ],
-      cta: "CRIAR PROJETO",
+      cta: "SOLICITAR ORÇAMENTO",
       ctaLink: "https://wa.me/5581988845760?text=Olá%20ViniDigital%2Cquero%20falar%20sobre%20instalação%20de%20alexa%20e%20orçamentos!",
       variant: "secondary" as const,
       reverse: false,
@@ -67,7 +76,7 @@ const ServicesSection = () => {
         "Projetos personalizados com análise de consumo e dimensionamento ideal para sua residência ou empresa.",
         "Manutenção preventiva e monitoramento remoto da geração de energia em tempo real.",
       ],
-      cta: "SIMULAR ECONOMIA",
+      cta: "SOLICITAR ORÇAMENTO",
       ctaLink: "https://wa.me/5581988845760?text=Olá%20ViniDigital%2Cquero%20falar%20sobre%20Sistema%20Solar%20e%20Orçamentos!",
       variant: "primary" as const,
       reverse: true,
@@ -83,15 +92,15 @@ const ServicesSection = () => {
       features: [
         "Inspeção predial com imagens aéreas de alta resolução para laudos técnicos e manutenção preventiva.",
         "Fotos e vídeos profissionais aéreos para eventos, imóveis, construções e marketing.",
-        "Mapeamento, monitoramento de obras e serviços especializados com drones de última geração.",
       ],
-      cta: "SOLICITAR VOO",
+      cta: "SOLICITAR ORÇAMENTO",
       ctaLink: "https://wa.me/5581988845760?text=Olá%20ViniDigital%2Cquero%20falar%20sobre%20Trabalhos%20com%20Drones%20e%20Orçamentos!",
       variant: "outline" as const,
       reverse: false,
       images: [
         { type: "image" as const, src: droneWork1, alt: "Trabalho com drone" },
         { type: "image" as const, src: droneWork2, alt: "Inspeção aérea com drone" },
+        { type: "image" as const, src: droneWork3, alt: "Drone profissional na maleta" },
         { type: "video" as const, src: "/videos/drone-video.mp4", alt: "Vídeo de trabalho com drone" },
       ],
     },
