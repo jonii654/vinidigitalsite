@@ -92,16 +92,10 @@ const Index = () => {
       
       <main className={`transition-all duration-700 ${portalActive ? 'blur-[10px] scale-110' : ''}`}>
         <HeroSection />
-        <div className="parallax-section" data-speed="0.03">
-          <ShowcaseBanner />
-        </div>
-        <div className="parallax-section" data-speed="0.05">
-          <AboutSection />
-        </div>
+        <ShowcaseBanner />
+        <AboutSection />
         <WorksSection />
-        <div className="parallax-section" data-speed="0.04">
-          <ServicesSection />
-        </div>
+        <ServicesSection />
         <ContactSection onPortalClick={triggerPortal} />
       </main>
 
