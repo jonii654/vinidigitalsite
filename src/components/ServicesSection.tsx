@@ -30,7 +30,10 @@ const ServicesSection = () => {
       ctaLink: "https://wa.me/5581988845760?text=Olá%20ViniDigital%2Cquero%20fala%20sobre%20Cftv%20e%20Orçamentos!",
       variant: "primary" as const,
       reverse: false,
-      images: [{ type: "image" as const, src: cftvWork, alt: "Instalação profissional de CFTV" }],
+      images: [
+        { type: "image" as const, src: cftvWork, alt: "Instalação profissional de CFTV" },
+        { type: "video" as const, src: "/videos/cftv-video.mp4", alt: "Vídeo de trabalho CFTV" },
+      ],
     },
     {
       tag: "Infraestrutura",
