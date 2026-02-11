@@ -33,6 +33,14 @@ const Index = () => {
         const speed = parseFloat((circle as HTMLElement).dataset.speed || '0.15');
         (circle as HTMLElement).style.transform = `translateY(${scrollY * speed}px)`;
       });
+      
+      // Parallax effect for sections
+      document.querySelectorAll('.parallax-section').forEach((section) => {
+        const rect = (section as HTMLElement).getBoundingClientRect();
+        const speed = parseFloat((section as HTMLElement).dataset.speed || '0.05');
+        const offset = rect.top * speed;
+        (section as HTMLElement).style.transform = `translateY(${offset}px)`;
+      });
     };
 
     const observer = new IntersectionObserver((entries) => {
@@ -84,10 +92,16 @@ const Index = () => {
       
       <main className={`transition-all duration-700 ${portalActive ? 'blur-[10px] scale-110' : ''}`}>
         <HeroSection />
-        <ShowcaseBanner />
-        <AboutSection />
+        <div className="parallax-section" data-speed="0.03">
+          <ShowcaseBanner />
+        </div>
+        <div className="parallax-section" data-speed="0.05">
+          <AboutSection />
+        </div>
         <WorksSection />
-        <ServicesSection />
+        <div className="parallax-section" data-speed="0.04">
+          <ServicesSection />
+        </div>
         <ContactSection onPortalClick={triggerPortal} />
       </main>
 

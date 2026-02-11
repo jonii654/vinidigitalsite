@@ -1,8 +1,8 @@
-import vinidigitalAbout from "@/assets/vinidigital-about.jpg";
+import vinidigitalAbout from "@/assets/vinidigital-about-new.jpg";
 
 const AboutSection = () => {
   return (
-    <section id="apresentacao" className="py-20 relative z-10">
+    <section id="apresentacao" className="py-20 relative z-10 overflow-hidden">
       <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
         <div className="reveal">
           <span className="text-primary font-black text-[10px] tracking-[0.3em] uppercase mb-4 block italic">
@@ -10,8 +10,7 @@ const AboutSection = () => {
           </span>
           
           <h2 className="text-3xl md:text-4xl font-black mb-6 leading-tight uppercase italic text-foreground">
-            Quem é <br />
-            <span className="text-primary text-5xl">ViniDigital?</span>
+            Quem <span className="text-primary text-5xl">somos?</span>
           </h2>
           
           <p className="text-muted-foreground text-sm leading-relaxed mb-6">
@@ -22,17 +21,6 @@ const AboutSection = () => {
             Hoje, a <strong className="text-foreground">ViniDigital</strong> é referência em Abreu e Lima e região, oferecendo estabilidade técnica em <strong className="text-foreground">Elétrica, Alarmes, Câmeras, Automação e muito mais</strong>. Confie em quem tem história e segue avançando.
           </p>
           
-          <div className="flex gap-8">
-            <div>
-              <div className="text-3xl font-black text-foreground italic">DESDE</div>
-              <div className="text-primary font-bold text-[8px] uppercase tracking-widest">2018 no Setor</div>
-            </div>
-            <div className="w-[1px] h-10 bg-foreground/10" />
-            <div>
-              <div className="text-3xl font-black text-foreground italic">REALI</div>
-              <div className="text-primary font-bold text-[8px] uppercase tracking-widest">Compromisso</div>
-            </div>
-          </div>
         </div>
         
         <div className="reveal h-[450px]">

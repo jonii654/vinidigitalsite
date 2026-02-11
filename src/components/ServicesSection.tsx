@@ -171,19 +171,6 @@ const ServicesSection = () => {
                     <p key={i}>. {feature}</p>
                   ))}
                 </div>
-                <a href={service.ctaLink} target="_blank" rel="noopener noreferrer">
-                  <Button
-                    className={`px-6 md:px-8 py-3 rounded-xl font-black text-xs shadow-lg mt-4 w-full md:w-auto ${
-                      service.variant === "primary"
-                        ? "bg-primary text-primary-foreground hover:bg-primary/90"
-                        : service.variant === "outline"
-                        ? "border border-primary text-primary bg-transparent hover:bg-primary hover:text-primary-foreground"
-                        : "bg-foreground text-background hover:bg-foreground/90"
-                    }`}
-                  >
-                    {service.cta}
-                  </Button>
-                </a>
               </div>
             </div>
           ))}
