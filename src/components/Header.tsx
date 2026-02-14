@@ -3,8 +3,8 @@ import vdLogo from "@/assets/vd-logo-new.jpg";
 
 const Header = () => {
   const navLinks = [
-    { href: "#inicio", label: "Início" },
-    { href: "#apresentacao", label: "Vinícius" },
+    { href: "#inicio", label: "Home" },
+    { href: "#apresentacao", label: "Quem somos" },
     { href: "#trabalhos", label: "Trabalhos" },
     { href: "#servicos", label: "Serviços" },
     { href: "#contato", label: "Contacto" },
