@@ -14,6 +14,7 @@ import ParticlesCanvas from "@/components/ParticlesCanvas";
 const Index = () => {
   const parallaxRef = useRef<HTMLDivElement>(null);
   const [portalActive, setPortalActive] = useState(false);
+  const [videoLoaded, setVideoLoaded] = useState(false);
 
   const triggerPortal = useCallback(() => {
     if (portalActive) return;
@@ -70,7 +71,8 @@ const Index = () => {
           muted
           loop
           playsInline
-          className="absolute top-1/2 left-1/2 min-w-full min-h-full w-auto h-auto -translate-x-1/2 -translate-y-1/2 object-cover opacity-70"
+          onCanPlayThrough={() => setVideoLoaded(true)}
+          className={`absolute top-1/2 left-1/2 min-w-full min-h-full w-auto h-auto -translate-x-1/2 -translate-y-1/2 object-cover transition-opacity duration-1000 ${videoLoaded ? 'opacity-70' : 'opacity-0'}`}
         >
           <source src="/videos/background.mp4" type="video/mp4" />
         </video>
