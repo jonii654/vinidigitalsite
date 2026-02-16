@@ -10,8 +10,7 @@ const ShowcaseBanner = () => {
             alt="ViniDigital showcase"
             className="absolute inset-0 w-full h-full object-contain md:object-cover object-center"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
           <div className="absolute bottom-6 left-6 right-6 md:bottom-8 md:left-8 md:right-8">
             <span className="text-primary font-black text-[9px] tracking-[0.4em] uppercase block mb-2">
               Excelência & Compromisso
