@@ -1,6 +1,12 @@
 import { Button } from "@/components/ui/button";
 import ServiceCarousel from "@/components/ServiceCarousel";
 import cftvWork from "@/assets/cftv-work.jpg";
+import cftvWork2 from "@/assets/cftv-work-2.jpg";
+import cftvWork3 from "@/assets/cftv-work-3.jpg";
+import cftvWork4 from "@/assets/cftv-work-4.jpg";
+import cftvWork5 from "@/assets/cftv-work-5.jpg";
+import cftvWork6 from "@/assets/cftv-work-6.jpg";
+import cftvWork7 from "@/assets/cftv-work-7.jpg";
 import eletricaWork from "@/assets/eletrica-work.jpg";
 import eletricaWork2 from "@/assets/eletrica-work-2.jpg";
 import eletricaWork3 from "@/assets/eletrica-work-3.jpg";
@@ -35,7 +41,13 @@ const ServicesSection = () => {
       reverse: false,
       images: [
         { type: "image" as const, src: cftvWork, alt: "Instalação profissional de CFTV" },
-        { type: "video" as const, src: "/videos/cftv-video.mp4", alt: "Vídeo de trabalho CFTV" },
+        { type: "image" as const, src: cftvWork2, alt: "Câmera Intelbras com grade" },
+        { type: "image" as const, src: cftvWork3, alt: "Técnico instalando CFTV" },
+        { type: "image" as const, src: cftvWork4, alt: "Câmera Intelbras close" },
+        { type: "image" as const, src: cftvWork5, alt: "Câmera CFTV externa" },
+        { type: "image" as const, src: cftvWork6, alt: "Câmera CFTV Intelbras" },
+        { type: "image" as const, src: cftvWork7, alt: "Câmera CFTV instalada" },
+        { type: "video" as const, src: "/videos/cftv-video-2.mp4", alt: "Vídeo de trabalho CFTV" },
       ],
     },
     {
@@ -111,6 +123,7 @@ const ServicesSection = () => {
         { type: "image" as const, src: droneWork2, alt: "Inspeção aérea com drone" },
         { type: "image" as const, src: droneWork3, alt: "Drone profissional na maleta" },
         { type: "video" as const, src: "/videos/drone-video.mp4", alt: "Vídeo de trabalho com drone" },
+        { type: "video" as const, src: "/videos/cftv-video.mp4", alt: "Vídeo de trabalho aéreo" },
       ],
     },
   ];
