@@ -31,11 +31,6 @@ const AboutSection = () => {
               className="absolute inset-0 w-full h-full object-cover object-top"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-navy/90 via-transparent to-transparent" />
-            <div className="absolute bottom-6 left-6">
-              <p className="text-foreground font-black text-xl italic uppercase tracking-tighter">
-                ViniDigital: Excelência & Compromisso
-              </p>
-            </div>
           </div>
         </div>
       </div>
