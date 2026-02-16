@@ -4,10 +4,11 @@ const ShowcaseBanner = () => {
   return (
     <section className="relative z-10 py-4 md:py-8">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="relative h-[400px] md:h-[550px] rounded-2xl overflow-hidden border border-primary/20 shadow-2xl shadow-primary/10 reveal-left">
-          <div
-            className="absolute inset-0 bg-cover bg-center bg-fixed"
-            style={{ backgroundImage: `url(${showcaseBanner})` }}
+        <div className="relative h-[450px] md:h-[600px] rounded-2xl overflow-hidden border border-primary/20 shadow-2xl shadow-primary/10 reveal-left">
+          <img
+            src={showcaseBanner}
+            alt="ViniDigital showcase"
+            className="absolute inset-0 w-full h-full object-contain md:object-cover object-center"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-transparent" />

@@ -26,7 +26,7 @@ const WorksSection = () => {
                   controls
                   playsInline
                   preload="metadata"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain bg-black/50"
                 />
               </div>
               <p className="text-center mt-4 text-[10px] font-bold uppercase text-muted-foreground">
