@@ -7,6 +7,9 @@ import eletricaWork3 from "@/assets/eletrica-work-3.jpg";
 import eletricaWork4 from "@/assets/eletrica-work-4.jpg";
 import alexaWork1 from "@/assets/alexa-work-1.jpg";
 import alexaWork2 from "@/assets/alexa-work-2.jpg";
+import alexaWork3 from "@/assets/alexa-work-3.jpg";
+import alexaWork4 from "@/assets/alexa-work-4.jpg";
+import alexaWork5 from "@/assets/alexa-work-5.jpg";
 import solarWork1 from "@/assets/solar-work-1.jpg";
 import solarWork2 from "@/assets/solar-work-2.jpg";
 import solarWork3 from "@/assets/solar-work-3.jpg";
@@ -69,6 +72,9 @@ const ServicesSection = () => {
       images: [
         { type: "image" as const, src: alexaWork1, alt: "Smart Home com Alexa Echo Dot" },
         { type: "image" as const, src: alexaWork2, alt: "Instalação Smart Home Alexa" },
+        { type: "image" as const, src: alexaWork3, alt: "Smart Speaker Intelbras IZY" },
+        { type: "image" as const, src: alexaWork4, alt: "Smart Speaker IZY Home" },
+        { type: "image" as const, src: alexaWork5, alt: "Echo Dot com cartão ViniDigital" },
       ],
     },
     {
@@ -127,7 +133,7 @@ const ServicesSection = () => {
                 service.reverse ? "md:[&>*:first-child]:order-last" : ""
               }`}
             >
-              <div className={`h-[250px] md:h-[350px] relative rounded-2xl overflow-hidden border border-primary/20 bg-navy ${
+              <div className={`h-[280px] md:h-[380px] relative rounded-2xl overflow-hidden border border-primary/20 bg-navy ${
                 service.reverse ? "reveal-right" : "reveal-left"
               }`}>
                 {service.images.length > 1 ? (
