@@ -2,6 +2,7 @@ const WorksSection = () => {
   const works = [
     { title: "Trabalho 01", subtitle: "Instalação Residencial", video: "/videos/trabalho-1.mp4" },
     { title: "Trabalho 02", subtitle: "Projeto Corporativo", video: "/videos/trabalho-new.mp4" },
+    { title: "Trabalho 03", subtitle: "Automação de Elite", video: "/videos/trabalho-3.mp4" },
   ];
 
   return (
@@ -16,7 +17,7 @@ const WorksSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {works.map((work, index) => (
             <div key={index} className="reveal group">
               <div className="w-full aspect-video rounded-2xl overflow-hidden border border-primary/20 bg-navy/60">
