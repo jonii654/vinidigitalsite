@@ -1,8 +1,8 @@
 const WorksSection = () => {
   const works = [
-    { title: "Trabalho 01 - Vídeo em Breve", subtitle: "Instalação Residencial" },
-    { title: "Trabalho 02 - Vídeo em Breve", subtitle: "Projeto Corporativo" },
-    { title: "Trabalho 03 - Vídeo em Breve", subtitle: "Automação de Elite" },
+    { title: "Trabalho 01", subtitle: "Instalação Residencial", video: "/videos/trabalho-1.mp4" },
+    { title: "Trabalho 02", subtitle: "Projeto Corporativo", video: "/videos/trabalho-2.mp4" },
+    { title: "Trabalho 03", subtitle: "Automação de Elite", video: "/videos/trabalho-3.mp4" },
   ];
 
   return (
@@ -20,10 +20,14 @@ const WorksSection = () => {
         <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {works.map((work, index) => (
             <div key={index} className="reveal group">
-              <div className="w-full aspect-video bg-navy/60 border border-dashed border-primary rounded-2xl flex items-center justify-center">
-                <span className="text-primary font-black text-[10px] uppercase tracking-widest">
-                  {work.title}
-                </span>
+              <div className="w-full aspect-video rounded-2xl overflow-hidden border border-primary/20 bg-navy/60">
+                <video
+                  src={work.video}
+                  controls
+                  playsInline
+                  preload="metadata"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <p className="text-center mt-4 text-[10px] font-bold uppercase text-muted-foreground">
                 {work.subtitle}
