@@ -11,7 +11,7 @@ const Header = () => {
   ];
 
   return (
-    <header className="fixed w-full z-50 bg-navy/80 backdrop-blur-lg border-b border-foreground/5">
+    <header className="fixed w-full z-50 bg-navy/90 border-b border-foreground/5">
       <div className="container mx-auto px-4 py-2 flex justify-between items-center">
         <div className="h-8 md:h-10 flex items-center">
           <img src={vdLogo} alt="ViniDigital Logo" className="h-full w-auto object-contain rounded" />
@@ -51,8 +51,7 @@ const Header = () => {
         </a>
       </div>
       
-      {/* Mobile Menu */}
-      <nav id="mobile-menu" className="hidden lg:hidden bg-navy/95 backdrop-blur-lg border-t border-foreground/5">
+      <nav id="mobile-menu" className="hidden lg:hidden bg-navy/95 border-t border-foreground/5">
         <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
           {navLinks.map((link) => (
             <a
