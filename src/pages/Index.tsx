@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect } from "react";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import ShowcaseBanner from "@/components/ShowcaseBanner";
@@ -9,8 +9,6 @@ import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 
 const Index = () => {
-  const [videoLoaded, setVideoLoaded] = useState(false);
-
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -25,7 +23,7 @@ const Index = () => {
 
   return (
     <div className="overflow-x-hidden bg-background text-foreground">
-      {/* Background Video */}
+      {/* Background Video - always visible, no fade */}
       <div className="fixed inset-0 z-[1] overflow-hidden bg-background">
         <video
           autoPlay
@@ -33,9 +31,7 @@ const Index = () => {
           loop
           playsInline
           preload="auto"
-          onCanPlayThrough={() => setVideoLoaded(true)}
-          onLoadedData={() => setVideoLoaded(true)}
-          className={`absolute top-1/2 left-1/2 min-w-full min-h-full w-auto h-auto -translate-x-1/2 -translate-y-1/2 object-cover transition-opacity duration-300 ${videoLoaded ? 'opacity-60' : 'opacity-0'}`}
+          className="absolute top-1/2 left-1/2 min-w-full min-h-full w-auto h-auto -translate-x-1/2 -translate-y-1/2 object-cover opacity-60"
         >
           <source src="/videos/background.mp4" type="video/mp4" />
         </video>
