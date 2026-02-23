@@ -129,7 +129,7 @@ const ServicesSection = () => {
   ];
 
   return (
-    <section id="servicos" className="py-16 md:py-24 bg-background/60 relative z-10 backdrop-blur-sm">
+    <section id="servicos" className="py-16 md:py-24 bg-background/60 relative z-10">
       <div className="container mx-auto px-4 md:px-6">
         <div className="mb-12 md:mb-20 reveal text-center">
           <h2 className="text-2xl md:text-5xl font-black uppercase tracking-tighter italic text-foreground">

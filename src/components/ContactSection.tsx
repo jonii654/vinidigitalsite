@@ -10,7 +10,7 @@ const ContactSection = () => {
   return (
     <section id="contato" className="py-24 bg-transparent relative z-10">
       <div className="container mx-auto px-6">
-        <div className="max-w-4xl mx-auto bg-navy/40 backdrop-blur-xl rounded-[2.5rem] overflow-hidden border border-foreground/5 relative">
+        <div className="max-w-4xl mx-auto bg-navy/60 rounded-[2.5rem] overflow-hidden border border-foreground/5 relative">
           <div className="grid md:grid-cols-2 text-left">
             <div className="p-10 md:p-14 relative z-10">
               <h2 className="text-4xl md:text-5xl font-black text-foreground mb-8 tracking-tighter uppercase italic leading-[0.9]">

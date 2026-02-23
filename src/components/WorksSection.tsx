@@ -6,7 +6,7 @@ const WorksSection = () => {
   ];
 
   return (
-    <section id="trabalhos" className="py-24 relative z-10 bg-navy/20 backdrop-blur-sm">
+    <section id="trabalhos" className="py-24 relative z-10 bg-navy/20">
       <div className="container mx-auto px-6">
         <div className="mb-16 reveal text-center">
           <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter italic text-foreground">
