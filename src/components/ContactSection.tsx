@@ -3,11 +3,10 @@ import { Button } from "@/components/ui/button";
 import vdLogo from "@/assets/vd-logo-new.jpg";
 import viniciusPhoto from "@/assets/vinicius-photo.jpg";
 
-interface ContactSectionProps {
-  onPortalClick?: () => void;
-}
-
-const ContactSection = ({ onPortalClick }: ContactSectionProps) => {
+const ContactSection = () => {
+  const handleContact = () => {
+    window.open("https://wa.me/5581988845760?text=Vim%20do%20seu%20site%20e%20quero%20contratar%20seus%20serviços!", '_blank');
+  };
   return (
     <section id="contato" className="py-24 bg-transparent relative z-10">
       <div className="container mx-auto px-6">
@@ -39,7 +38,7 @@ const ContactSection = ({ onPortalClick }: ContactSectionProps) => {
               </div>
 
               <Button 
-                onClick={onPortalClick}
+                onClick={handleContact}
                 className="shine-effect w-full py-5 rounded-2xl font-black text-lg uppercase tracking-widest shadow-2xl bg-gradient-to-r from-primary to-orange-600 text-primary-foreground border border-foreground/20 hover:opacity-90 cursor-pointer"
               >
                 SOLICITAR ORÇAMENTO
