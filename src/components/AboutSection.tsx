@@ -1,4 +1,4 @@
-
+import vinidigitalAbout from "@/assets/vinidigital-about-new.jpg";
 
 const AboutSection = () => {
   return (
@@ -26,9 +26,8 @@ const AboutSection = () => {
         <div className="reveal h-[450px]">
           <div className="relative rounded-2xl overflow-hidden border-2 border-primary/50 bg-navy h-full">
             <img 
-              src="/lazy/vinidigital-about-new.jpg"
+              src={vinidigitalAbout} 
               alt="ViniDigital - Soluções em Elétrica, Alarmes, Câmeras e Automação" 
-              loading="lazy"
               className="absolute inset-0 w-full h-full object-cover object-top"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-navy/90 via-transparent to-transparent" />

@@ -1,7 +1,27 @@
-import { lazy, Suspense } from "react";
 import { Button } from "@/components/ui/button";
-
-const ServiceCarousel = lazy(() => import("@/components/ServiceCarousel"));
+import ServiceCarousel from "@/components/ServiceCarousel";
+import cftvWork from "@/assets/cftv-work.jpg";
+import cftvWork2 from "@/assets/cftv-work-2.jpg";
+import cftvWork3 from "@/assets/cftv-work-3.jpg";
+import cftvWork4 from "@/assets/cftv-work-4.jpg";
+import cftvWork5 from "@/assets/cftv-work-5.jpg";
+import cftvWork6 from "@/assets/cftv-work-6.jpg";
+import cftvWork7 from "@/assets/cftv-work-7.jpg";
+import eletricaWork from "@/assets/eletrica-work.jpg";
+import eletricaWork2 from "@/assets/eletrica-work-2.jpg";
+import eletricaWork3 from "@/assets/eletrica-work-3.jpg";
+import eletricaWork4 from "@/assets/eletrica-work-4.jpg";
+import alexaWork1 from "@/assets/alexa-work-1.jpg";
+import alexaWork2 from "@/assets/alexa-work-2.jpg";
+import alexaWork3 from "@/assets/alexa-work-3.jpg";
+import alexaWork4 from "@/assets/alexa-work-4.jpg";
+import alexaWork5 from "@/assets/alexa-work-5.jpg";
+import solarWork1 from "@/assets/solar-work-1.jpg";
+import solarWork2 from "@/assets/solar-work-2.jpg";
+import solarWork3 from "@/assets/solar-work-3.jpg";
+import droneWork1 from "@/assets/drone-work-1.jpg";
+import droneWork2 from "@/assets/drone-work-2.jpg";
+import droneWork3 from "@/assets/drone-work-3.jpg";
 
 type MediaItem = { type: "image" | "video"; src: string; alt: string };
 
@@ -20,13 +40,13 @@ const ServicesSection = () => {
       variant: "primary" as const,
       reverse: false,
       images: [
-        { type: "image" as const, src: "/lazy/cftv-work.jpg", alt: "Instalação profissional de CFTV" },
-        { type: "image" as const, src: "/lazy/cftv-work-2.jpg", alt: "Câmera Intelbras com grade" },
-        { type: "image" as const, src: "/lazy/cftv-work-3.jpg", alt: "Técnico instalando CFTV" },
-        { type: "image" as const, src: "/lazy/cftv-work-4.jpg", alt: "Câmera Intelbras close" },
-        { type: "image" as const, src: "/lazy/cftv-work-5.jpg", alt: "Câmera CFTV externa" },
-        { type: "image" as const, src: "/lazy/cftv-work-6.jpg", alt: "Câmera CFTV Intelbras" },
-        { type: "image" as const, src: "/lazy/cftv-work-7.jpg", alt: "Câmera CFTV instalada" },
+        { type: "image" as const, src: cftvWork, alt: "Instalação profissional de CFTV" },
+        { type: "image" as const, src: cftvWork2, alt: "Câmera Intelbras com grade" },
+        { type: "image" as const, src: cftvWork3, alt: "Técnico instalando CFTV" },
+        { type: "image" as const, src: cftvWork4, alt: "Câmera Intelbras close" },
+        { type: "image" as const, src: cftvWork5, alt: "Câmera CFTV externa" },
+        { type: "image" as const, src: cftvWork6, alt: "Câmera CFTV Intelbras" },
+        { type: "image" as const, src: cftvWork7, alt: "Câmera CFTV instalada" },
         { type: "video" as const, src: "/videos/cftv-video-2.mp4", alt: "Vídeo de trabalho CFTV" },
       ],
     },
@@ -43,10 +63,10 @@ const ServicesSection = () => {
       variant: "outline" as const,
       reverse: true,
       images: [
-        { type: "image" as const, src: "/lazy/eletrica-work.jpg", alt: "Trabalho de elétrica profissional" },
-        { type: "image" as const, src: "/lazy/eletrica-work-2.jpg", alt: "Eletricista com multímetro" },
-        { type: "image" as const, src: "/lazy/eletrica-work-3.jpg", alt: "Montagem de quadro elétrico" },
-        { type: "image" as const, src: "/lazy/eletrica-work-4.jpg", alt: "Técnico eletricista com ferramentas" },
+        { type: "image" as const, src: eletricaWork, alt: "Trabalho de elétrica profissional" },
+        { type: "image" as const, src: eletricaWork2, alt: "Eletricista com multímetro" },
+        { type: "image" as const, src: eletricaWork3, alt: "Montagem de quadro elétrico" },
+        { type: "image" as const, src: eletricaWork4, alt: "Técnico eletricista com ferramentas" },
       ],
     },
     {
@@ -62,11 +82,11 @@ const ServicesSection = () => {
       variant: "secondary" as const,
       reverse: false,
       images: [
-        { type: "image" as const, src: "/lazy/alexa-work-1.jpg", alt: "Smart Home com Alexa Echo Dot" },
-        { type: "image" as const, src: "/lazy/alexa-work-2.jpg", alt: "Instalação Smart Home Alexa" },
-        { type: "image" as const, src: "/lazy/alexa-work-3.jpg", alt: "Smart Speaker Intelbras IZY" },
-        { type: "image" as const, src: "/lazy/alexa-work-4.jpg", alt: "Smart Speaker IZY Home" },
-        { type: "image" as const, src: "/lazy/alexa-work-5.jpg", alt: "Echo Dot com cartão ViniDigital" },
+        { type: "image" as const, src: alexaWork1, alt: "Smart Home com Alexa Echo Dot" },
+        { type: "image" as const, src: alexaWork2, alt: "Instalação Smart Home Alexa" },
+        { type: "image" as const, src: alexaWork3, alt: "Smart Speaker Intelbras IZY" },
+        { type: "image" as const, src: alexaWork4, alt: "Smart Speaker IZY Home" },
+        { type: "image" as const, src: alexaWork5, alt: "Echo Dot com cartão ViniDigital" },
       ],
     },
     {
@@ -82,9 +102,9 @@ const ServicesSection = () => {
       variant: "primary" as const,
       reverse: true,
       images: [
-        { type: "image" as const, src: "/lazy/solar-work-1.jpg", alt: "Instalação de painéis solares" },
-        { type: "image" as const, src: "/lazy/solar-work-2.jpg", alt: "Sistema solar fotovoltaico" },
-        { type: "image" as const, src: "/lazy/solar-work-3.jpg", alt: "Painel solar instalado" },
+        { type: "image" as const, src: solarWork1, alt: "Instalação de painéis solares" },
+        { type: "image" as const, src: solarWork2, alt: "Sistema solar fotovoltaico" },
+        { type: "image" as const, src: solarWork3, alt: "Painel solar instalado" },
       ],
     },
     {
@@ -99,9 +119,9 @@ const ServicesSection = () => {
       variant: "outline" as const,
       reverse: false,
       images: [
-        { type: "image" as const, src: "/lazy/drone-work-1.jpg", alt: "Trabalho com drone" },
-        { type: "image" as const, src: "/lazy/drone-work-2.jpg", alt: "Inspeção aérea com drone" },
-        { type: "image" as const, src: "/lazy/drone-work-3.jpg", alt: "Drone profissional na maleta" },
+        { type: "image" as const, src: droneWork1, alt: "Trabalho com drone" },
+        { type: "image" as const, src: droneWork2, alt: "Inspeção aérea com drone" },
+        { type: "image" as const, src: droneWork3, alt: "Drone profissional na maleta" },
         { type: "video" as const, src: "/videos/drone-video.mp4", alt: "Vídeo de trabalho com drone" },
         { type: "video" as const, src: "/videos/cftv-video.mp4", alt: "Vídeo de trabalho aéreo" },
       ],
@@ -130,9 +150,7 @@ const ServicesSection = () => {
                 service.reverse ? "reveal-right" : "reveal-left"
               }`}>
                 {service.images.length > 1 ? (
-                  <Suspense fallback={<div className="w-full h-full bg-navy" />}>
-                    <ServiceCarousel items={service.images} />
-                  </Suspense>
+                  <ServiceCarousel items={service.images} />
                 ) : service.images.length === 1 ? (
                   <>
                     {service.images[0].type === "image" ? (
@@ -140,11 +158,9 @@ const ServicesSection = () => {
                         src={service.images[0].src}
                         alt={service.images[0].alt}
                         className="absolute inset-0 w-full h-full object-cover"
-                        loading="lazy"
                       />
                     ) : (
                       <video
-                        src={service.images[0].src}
                         controls
                         playsInline
                         preload="none"
