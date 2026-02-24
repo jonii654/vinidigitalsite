@@ -21,6 +21,24 @@
   </head>
 
   <body>
+    <!-- Background video rendered BEFORE React for instant visibility -->
+    <div id="bg-video-container" style="position:fixed;inset:0;z-index:1;overflow:hidden;background:#000">
+      <video
+        id="bg-video"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto"
+        poster="/images/video-poster.jpg"
+        style="position:absolute;top:50%;left:50%;min-width:100%;min-height:100%;width:auto;height:auto;transform:translate(-50%,-50%);object-fit:cover;opacity:0.6"
+      >
+        <source src="/videos/background.mp4" type="video/mp4" />
+      </video>
+    </div>
+    <!-- Video overlay -->
+    <div id="bg-overlay" style="position:fixed;inset:0;z-index:2;background:radial-gradient(circle,rgba(0,29,69,0.2) 0%,rgba(0,0,0,0.75) 100%)"></div>
+
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

@@ -22,25 +22,7 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="overflow-x-hidden bg-background text-foreground">
-      {/* Background Video - always visible, no fade */}
-      <div className="fixed inset-0 z-[1] overflow-hidden bg-background">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-          poster="/images/video-poster.jpg"
-          className="absolute top-1/2 left-1/2 min-w-full min-h-full w-auto h-auto -translate-x-1/2 -translate-y-1/2 object-cover opacity-60"
-          style={{ willChange: 'auto', transition: 'none', animation: 'none' }}
-        >
-          <source src="/videos/background.mp4" type="video/mp4" />
-        </video>
-      </div>
-      
-      {/* Video Overlay */}
-      <div className="fixed inset-0 z-[2] bg-[radial-gradient(circle,_rgba(0,29,69,0.2)_0%,_rgba(0,0,0,0.75)_100%)]" />
+    <div className="overflow-x-hidden bg-transparent text-foreground">
 
       <Header />
       
