@@ -26,7 +26,7 @@
   <body>
     <!-- Background video rendered BEFORE React for instant visibility -->
     <!-- Poster image loads FIRST, instantly visible -->
-    <div id="bg-video-container" style="position:fixed;inset:0;z-index:1;overflow:hidden;background:#000">
+    <div id="bg-video-container" style="position:fixed;inset:0;z-index:1;overflow:hidden;background:linear-gradient(135deg,#001d45 0%,#000c1f 50%,#000 100%)">
       <img
         id="bg-poster"
         src="/images/video-poster.jpg"
@@ -52,18 +52,18 @@
     <div id="root"></div>
 
     <script>
-      // Show React app only after poster is visible
+      // Show React app immediately - don't wait for poster
+      document.getElementById('root').classList.add('ready');
+      // Start video as soon as poster is loaded (no arbitrary delay)
       var poster = document.getElementById('bg-poster');
-      function showApp() { document.getElementById('root').classList.add('ready'); }
-      if (poster.complete) showApp();
-      else poster.onload = showApp;
-      // Lazy-load video after page settles
-      setTimeout(function() {
+      function startVideo() {
         var v = document.getElementById('bg-video');
         v.preload = 'auto';
         v.load();
         v.oncanplay = function() { v.style.opacity = '0.6'; };
-      }, 2000);
+      }
+      if (poster.complete) startVideo();
+      else poster.onload = startVideo;
     </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
