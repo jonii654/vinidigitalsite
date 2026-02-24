@@ -1,4 +1,4 @@
-import showcaseBanner from "@/assets/showcase-banner.jpg";
+
 
 const ShowcaseBanner = () => {
   return (
@@ -6,8 +6,9 @@ const ShowcaseBanner = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="relative h-[450px] md:h-[600px] rounded-2xl overflow-hidden border border-primary/20 shadow-2xl shadow-primary/10 reveal-left">
           <img
-            src={showcaseBanner}
+            src="/lazy/showcase-banner.jpg"
             alt="ViniDigital showcase"
+            loading="lazy"
             className="absolute inset-0 w-full h-full object-contain md:object-cover object-center"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
