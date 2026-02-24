@@ -44,9 +44,10 @@ const ServiceCarousel = ({ items }: ServiceCarouselProps) => {
                 />
               ) : (
                 <video
-                  src={item.src}
+                  src={selectedIndex === i ? item.src : undefined}
                   controls
                   playsInline
+                  preload="none"
                   className="absolute inset-0 w-full h-full object-cover"
                 />
               )}
