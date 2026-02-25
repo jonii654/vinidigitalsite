@@ -8,6 +8,7 @@ const ShowcaseBanner = () => {
           <img
             src={showcaseBanner}
             alt="ViniDigital showcase"
+            loading="lazy"
             className="absolute inset-0 w-full h-full object-contain md:object-cover object-center"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />

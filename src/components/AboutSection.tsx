@@ -28,6 +28,7 @@ const AboutSection = () => {
             <img 
               src={vinidigitalAbout} 
               alt="ViniDigital - Soluções em Elétrica, Alarmes, Câmeras e Automação" 
+              loading="lazy"
               className="absolute inset-0 w-full h-full object-cover object-top"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-navy/90 via-transparent to-transparent" />
