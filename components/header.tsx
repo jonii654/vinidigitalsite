@@ -1,0 +1,109 @@
+"use client";
+
+import { Button } from "@/components/ui/button";
+
+export default function Header() {
+  const navLinks = [
+    { href: "#inicio", label: "Home" },
+    { href: "#apresentacao", label: "Quem somos" },
+    { href: "#trabalhos", label: "Trabalhos" },
+    { href: "#servicos", label: "Servicos" },
+    { href: "#contato", label: "Contato" },
+  ];
+
+  return (
+    <header className="fixed w-full z-50 bg-navy/90 border-b border-foreground/5">
+      <div className="container mx-auto px-4 py-2 flex justify-between items-center">
+        <div className="h-8 md:h-10 flex items-center">
+          <img
+            src="/images/vd-logo-new.jpg"
+            alt="ViniDigital Logo"
+            className="h-full w-auto object-contain rounded"
+          />
+        </div>
+
+        <nav className="hidden lg:flex gap-6 text-[10px] font-black uppercase tracking-widest text-muted-foreground">
+          {navLinks.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className="hover:text-primary transition-colors"
+            >
+              {link.label}
+            </a>
+          ))}
+        </nav>
+
+        <button
+          className="lg:hidden text-foreground p-2"
+          onClick={() => {
+            const menu = document.getElementById("mobile-menu");
+            menu?.classList.toggle("hidden");
+          }}
+          aria-label="Abrir menu"
+        >
+          <svg
+            className="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+
+        <a
+          href="https://wa.me/5581988845760?text=Vim%20do%20seu%20site%20e%20quero%20contratar%20seus%20servi%C3%A7os!"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hidden lg:block"
+        >
+          <Button
+            size="sm"
+            className="bg-primary text-primary-foreground hover:bg-primary/90 text-[10px] font-black uppercase tracking-tighter"
+          >
+            Orcamento
+          </Button>
+        </a>
+      </div>
+
+      <nav
+        id="mobile-menu"
+        className="hidden lg:hidden bg-navy/95 border-t border-foreground/5"
+      >
+        <div className="container mx-auto px-4 py-4 flex flex-col gap-4">
+          {navLinks.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className="text-muted-foreground hover:text-primary transition-colors text-sm font-bold uppercase"
+              onClick={() =>
+                document.getElementById("mobile-menu")?.classList.add("hidden")
+              }
+            >
+              {link.label}
+            </a>
+          ))}
+          <a
+            href="https://wa.me/5581988845760?text=Vim%20do%20seu%20site%20e%20quero%20contratar%20seus%20servi%C3%A7os!"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block"
+          >
+            <Button
+              size="sm"
+              className="bg-primary text-primary-foreground hover:bg-primary/90 text-xs font-black uppercase w-full"
+            >
+              Orcamento
+            </Button>
+          </a>
+        </div>
+      </nav>
+    </header>
+  );
+}
