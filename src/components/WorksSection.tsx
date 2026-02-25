@@ -22,7 +22,7 @@ const WorksSection = () => {
         <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto items-start">
           {works.map((work, index) => (
             <div key={index} className="reveal group">
-              <div className="w-full rounded-2xl overflow-hidden border border-primary/20 bg-navy/60">
+              <div className="w-full rounded-2xl overflow-hidden border-2 border-primary bg-navy/60">
                 <video
                   src={work.video}
                   controls
