@@ -45,7 +45,7 @@ const ServiceCarousel = ({ items }: ServiceCarouselProps) => {
                 <img
                   src={item.src}
                   alt={item.alt}
-                  className="absolute inset-0 w-full h-full object-cover"
+                  className="absolute inset-0 w-full h-full object-contain"
                 />
               ) : loadedVideos.has(i) ? (
                 <video
