@@ -1,11 +1,10 @@
 const WorksSection = () => {
-
   const works = [
-    { title: "Trabalho 01", subtitle: "Instalação Residencial", video: "/videos/trabalho-action-1.mp4", orientation: "vertical" as const },
-    { title: "Trabalho 02", subtitle: "Projeto Corporativo", video: "/videos/trabalho-new.mp4", orientation: "vertical" as const },
-    { title: "Trabalho 03", subtitle: "Automação de Elite", video: "/videos/trabalho-action-3.mp4", orientation: "vertical" as const },
+    { subtitle: "Instalação Residencial", video: "/videos/trabalho-action-1.mp4" },
+    { subtitle: "Projeto Corporativo", video: "/videos/trabalho-novo-1.mp4" },
+    { subtitle: "Automação de Elite", video: "/videos/trabalho-action-3.mp4" },
+    { subtitle: "Execução Técnica", video: "/videos/trabalho-novo-2.mp4" },
   ];
-
 
   return (
     <section id="trabalhos" className="py-24 relative z-10 bg-navy/20">
@@ -19,7 +18,7 @@ const WorksSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto items-start">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 max-w-6xl mx-auto items-start">
           {works.map((work, index) => (
             <div key={index} className="reveal group">
               <div className="w-full rounded-2xl overflow-hidden border-2 border-primary bg-navy/60">

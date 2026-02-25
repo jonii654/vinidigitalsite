@@ -30,28 +30,26 @@ const ServiceCarousel = ({ items }: ServiceCarouselProps) => {
     return () => { emblaApi.off("select", onSelect); };
   }, [emblaApi, onSelect]);
 
-
   return (
-    <div className="relative w-full h-full">
-      <div className="overflow-hidden h-full rounded-2xl" ref={emblaRef}>
-        <div className="flex h-full">
+    <div className="relative w-full">
+      <div className="overflow-hidden rounded-2xl" ref={emblaRef}>
+        <div className="flex">
           {items.map((item, i) => (
-            <div key={i} className="flex-[0_0_100%] min-w-0 h-full relative">
+            <div key={i} className="flex-[0_0_100%] min-w-0">
               {item.type === "image" ? (
                 <img
                   src={item.src}
                   alt={item.alt}
                   loading="lazy"
-                  className="absolute inset-0 w-full h-full object-contain"
+                  className="w-full h-auto"
                 />
               ) : (
                 <video
                   src={item.src}
                   controls
                   playsInline
-                  preload="auto"
-                  className="absolute inset-0 w-full h-full object-contain"
-                  style={{ transform: 'translateZ(0)', WebkitBackfaceVisibility: 'hidden' }}
+                  preload="metadata"
+                  className="w-full h-auto will-change-transform"
                 />
               )}
             </div>
