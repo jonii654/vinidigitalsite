@@ -72,42 +72,46 @@ All colors MUST be HSL.
   
   .reveal {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(30px) translateZ(0);
+    will-change: transform, opacity;
     transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
   }
   
   .reveal.active {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) translateZ(0);
   }
 
   .reveal-left {
     opacity: 0;
-    transform: translateX(-40px);
+    transform: translateX(-40px) translateZ(0);
+    will-change: transform, opacity;
     transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
   }
 
   .reveal-right {
     opacity: 0;
-    transform: translateX(40px);
+    transform: translateX(40px) translateZ(0);
+    will-change: transform, opacity;
     transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
   }
 
   .reveal-left.active,
   .reveal-right.active {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateX(0) translateZ(0);
   }
 
   .reveal-scale {
     opacity: 0;
-    transform: scale(0.9);
+    transform: scale(0.9) translateZ(0);
+    will-change: transform, opacity;
     transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
   }
 
   .reveal-scale.active {
     opacity: 1;
-    transform: scale(1);
+    transform: scale(1) translateZ(0);
   }
 
   .stagger-1 { transition-delay: 0.1s; }

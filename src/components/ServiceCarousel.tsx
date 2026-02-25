@@ -41,6 +41,7 @@ const ServiceCarousel = ({ items }: ServiceCarouselProps) => {
                 <img
                   src={item.src}
                   alt={item.alt}
+                  loading="lazy"
                   className="absolute inset-0 w-full h-full object-contain"
                 />
               ) : (
