@@ -14,7 +14,6 @@ interface ServiceCarouselProps {
 
 const ServiceCarousel = ({ items }: ServiceCarouselProps) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
-  const [loadedVideos, setLoadedVideos] = useState<Set<number>>(new Set());
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [
     Autoplay({ delay: 4000, stopOnInteraction: true }),
   ]);
@@ -31,9 +30,6 @@ const ServiceCarousel = ({ items }: ServiceCarouselProps) => {
     return () => { emblaApi.off("select", onSelect); };
   }, [emblaApi, onSelect]);
 
-  const handleVideoClick = (index: number) => {
-    setLoadedVideos(prev => new Set(prev).add(index));
-  };
 
   return (
     <div className="relative w-full h-full">
@@ -47,27 +43,14 @@ const ServiceCarousel = ({ items }: ServiceCarouselProps) => {
                   alt={item.alt}
                   className="absolute inset-0 w-full h-full object-contain"
                 />
-              ) : loadedVideos.has(i) ? (
+              ) : (
                 <video
                   src={item.src}
                   controls
-                  autoPlay
                   playsInline
-                  preload="none"
-                  className="absolute inset-0 w-full h-full object-cover"
+                  preload="metadata"
+                  className="absolute inset-0 w-full h-full object-contain"
                 />
-              ) : (
-                <div
-                  className="absolute inset-0 w-full h-full bg-navy flex items-center justify-center cursor-pointer"
-                  onClick={() => handleVideoClick(i)}
-                >
-                  <div className="w-16 h-16 rounded-full bg-primary/80 flex items-center justify-center">
-                    <svg className="w-8 h-8 text-foreground ml-1" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M8 5v14l11-7z" />
-                    </svg>
-                  </div>
-                  <span className="absolute bottom-4 text-xs text-muted-foreground">{item.alt}</span>
-                </div>
               )}
             </div>
           ))}
