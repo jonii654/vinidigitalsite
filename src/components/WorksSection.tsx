@@ -1,9 +1,9 @@
 const WorksSection = () => {
 
   const works = [
-    { title: "Trabalho 01", subtitle: "Instalação Residencial", video: "/videos/trabalho-1.mp4", orientation: "vertical" as const },
+    { title: "Trabalho 01", subtitle: "Instalação Residencial", video: "/videos/trabalho-action-1.mp4", orientation: "vertical" as const },
     { title: "Trabalho 02", subtitle: "Projeto Corporativo", video: "/videos/trabalho-new.mp4", orientation: "vertical" as const },
-    { title: "Trabalho 03", subtitle: "Automação de Elite", video: "/videos/trabalho-3.mp4", orientation: "vertical" as const },
+    { title: "Trabalho 03", subtitle: "Automação de Elite", video: "/videos/trabalho-action-3.mp4", orientation: "vertical" as const },
   ];
 
 
