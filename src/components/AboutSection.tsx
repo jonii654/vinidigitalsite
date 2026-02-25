@@ -61,7 +61,7 @@ const AboutSection = () => {
                       src={img.src}
                       alt={img.alt}
                       loading="lazy"
-                      className="absolute inset-0 w-full h-full object-cover object-top"
+                      className="absolute inset-0 w-full h-full object-contain"
                     />
                   </div>
                 ))}
