@@ -143,7 +143,7 @@ const ServicesSection = () => {
                 service.reverse ? "md:[&>*:first-child]:order-last" : ""
               }`}
             >
-              <div className={`h-[280px] md:h-[380px] relative rounded-2xl overflow-hidden border border-primary/20 bg-navy ${
+              <div className={`rounded-2xl overflow-hidden border-2 border-primary bg-navy/60 ${
                 service.reverse ? "reveal-right" : "reveal-left"
               }`}>
                 {service.images.length > 1 ? (
@@ -154,25 +154,19 @@ const ServicesSection = () => {
                       <img
                         src={service.images[0].src}
                         alt={service.images[0].alt}
-                        className="absolute inset-0 w-full h-full object-cover"
+                        className="w-full h-auto"
                       />
                     ) : (
                       <video
+                        src={service.images[0].src}
                         controls
                         playsInline
-                        preload="none"
-                        className="absolute inset-0 w-full h-full object-cover"
+                        preload="metadata"
+                        className="w-full h-auto will-change-transform"
                       />
                     )}
-                    <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent" />
                   </>
-                ) : (
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-navy flex items-center justify-center">
-                    <span className="text-4xl font-black text-foreground/10 italic uppercase">
-                      {service.title.split(" ")[0]}
-                    </span>
-                  </div>
-                )}
+                ) : null}
               </div>
 
               <div className={`space-y-3 md:space-y-4 ${

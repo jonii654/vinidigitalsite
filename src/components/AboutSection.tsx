@@ -51,17 +51,17 @@ const AboutSection = () => {
           </p>
         </div>
         
-        <div className="reveal h-[450px]">
-          <div className="relative rounded-2xl overflow-hidden border-2 border-primary/50 bg-navy h-full">
-            <div className="overflow-hidden h-full" ref={emblaRef}>
-              <div className="flex h-full">
+        <div className="reveal">
+          <div className="relative rounded-2xl overflow-hidden border-2 border-primary/50 bg-navy">
+            <div className="overflow-hidden" ref={emblaRef}>
+              <div className="flex">
                 {images.map((img, i) => (
-                  <div key={i} className="flex-[0_0_100%] min-w-0 h-full relative">
+                  <div key={i} className="flex-[0_0_100%] min-w-0">
                     <img
                       src={img.src}
                       alt={img.alt}
                       loading="lazy"
-                      className="absolute inset-0 w-full h-full object-contain"
+                      className="w-full h-auto"
                     />
                   </div>
                 ))}
@@ -69,7 +69,6 @@ const AboutSection = () => {
             </div>
             <div className="absolute inset-0 bg-gradient-to-t from-navy/90 via-transparent to-transparent pointer-events-none" />
             
-            {/* Arrow buttons */}
             <button
               onClick={scrollPrev}
               className="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-background/60 hover:bg-background/80 text-foreground rounded-full p-2 transition-colors"
@@ -85,7 +84,6 @@ const AboutSection = () => {
               <ChevronRight className="w-5 h-5" />
             </button>
 
-            {/* Dots */}
             <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2 z-10">
               {images.map((_, i) => (
                 <button
