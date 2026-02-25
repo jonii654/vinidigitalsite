@@ -4,7 +4,7 @@ const ShowcaseBanner = () => {
   return (
     <section className="relative z-10 py-4 md:py-8">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="relative h-[450px] md:h-[600px] rounded-2xl overflow-hidden border border-primary/20 shadow-2xl shadow-primary/10 reveal-left">
+        <div className="relative h-[450px] md:h-[600px] rounded-2xl md:rounded-3xl overflow-hidden border border-primary/20 shadow-2xl shadow-primary/10 reveal-left">
           <img
             src={showcaseBanner}
             alt="ViniDigital showcase"

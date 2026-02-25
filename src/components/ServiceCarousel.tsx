@@ -49,8 +49,9 @@ const ServiceCarousel = ({ items }: ServiceCarouselProps) => {
                   src={item.src}
                   controls
                   playsInline
-                  preload="metadata"
+                  preload="auto"
                   className="absolute inset-0 w-full h-full object-contain"
+                  style={{ transform: 'translateZ(0)', WebkitBackfaceVisibility: 'hidden' }}
                 />
               )}
             </div>
