@@ -1,14 +1,12 @@
-import { useEffect, lazy, Suspense } from "react";
+import { useEffect } from "react";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
-
-// Lazy load sections below the fold
-const ShowcaseBanner = lazy(() => import("@/components/ShowcaseBanner"));
-const AboutSection = lazy(() => import("@/components/AboutSection"));
-const WorksSection = lazy(() => import("@/components/WorksSection"));
-const ServicesSection = lazy(() => import("@/components/ServicesSection"));
-const ContactSection = lazy(() => import("@/components/ContactSection"));
-const Footer = lazy(() => import("@/components/Footer"));
+import ShowcaseBanner from "@/components/ShowcaseBanner";
+import AboutSection from "@/components/AboutSection";
+import WorksSection from "@/components/WorksSection";
+import ServicesSection from "@/components/ServicesSection";
+import ContactSection from "@/components/ContactSection";
+import Footer from "@/components/Footer";
 
 const Index = () => {
   useEffect(() => {
@@ -25,23 +23,18 @@ const Index = () => {
 
   return (
     <div className="overflow-x-hidden bg-transparent text-foreground">
-
       <Header />
       
       <main className="relative z-10">
         <HeroSection />
-        <Suspense fallback={null}>
-          <ShowcaseBanner />
-          <AboutSection />
-          <WorksSection />
-          <ServicesSection />
-          <ContactSection />
-        </Suspense>
+        <ShowcaseBanner />
+        <AboutSection />
+        <WorksSection />
+        <ServicesSection />
+        <ContactSection />
       </main>
 
-      <Suspense fallback={null}>
-        <Footer className="relative z-10" />
-      </Suspense>
+      <Footer className="relative z-10" />
     </div>
   );
 };
