@@ -2,7 +2,6 @@ import { Button } from "@/components/ui/button";
 import ServiceCarousel from "@/components/ServiceCarousel";
 import cftvWork from "@/assets/cftv-work.jpg";
 import cftvWork2 from "@/assets/cftv-work-2.jpg";
-import cftvWork4 from "@/assets/cftv-work-4.jpg";
 import cftvWork5 from "@/assets/cftv-work-5.jpg";
 import cftvWork6 from "@/assets/cftv-work-6.jpg";
 import cftvWork7 from "@/assets/cftv-work-7.jpg";
@@ -41,7 +40,7 @@ const ServicesSection = () => {
       images: [
         { type: "image" as const, src: cftvWork, alt: "Instalação profissional de CFTV" },
         { type: "image" as const, src: cftvWork2, alt: "Câmera Intelbras com grade" },
-        { type: "image" as const, src: cftvWork4, alt: "Câmera Intelbras close" },
+        { type: "image" as const, src: cftvWork5, alt: "Câmera CFTV externa" },
         { type: "image" as const, src: cftvWork5, alt: "Câmera CFTV externa" },
         { type: "image" as const, src: cftvWork6, alt: "Câmera CFTV Intelbras" },
         { type: "image" as const, src: cftvWork7, alt: "Câmera CFTV instalada" },
