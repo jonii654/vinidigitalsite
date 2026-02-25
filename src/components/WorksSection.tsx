@@ -22,15 +22,13 @@ const WorksSection = () => {
         <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto items-start">
           {works.map((work, index) => (
             <div key={index} className="reveal group">
-              <div className={`w-full rounded-2xl overflow-hidden border border-primary/20 bg-navy/60 ${
-                work.orientation === "vertical" ? "aspect-[9/16] max-h-[500px]" : "aspect-video"
-              }`}>
+              <div className="w-full rounded-2xl overflow-hidden border border-primary/20 bg-navy/60">
                 <video
                   src={work.video}
                   controls
                   playsInline
                   preload="metadata"
-                  className="w-full h-full object-contain bg-black/50 will-change-transform"
+                  className="w-full will-change-transform"
                 />
               </div>
               <p className="text-center mt-4 text-[10px] font-bold uppercase text-muted-foreground">
