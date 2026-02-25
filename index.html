@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preload" href="/images/video-poster.jpg" as="image" fetchpriority="high" />
+    <link rel="preload" href="/videos/background.mp4" as="video" fetchpriority="high" />
     <link rel="preload" href="/src/assets/vd-logo-new.jpg" as="image" />
     <title>ViniDigital - Segurança & Tecnologia</title>
     <meta name="description" content="ViniDigital - CFTV, Elétrica, Automação e Tecnologia em Abreu e Lima - PE" />
@@ -40,25 +41,15 @@
         playsinline
         preload="auto"
         poster="/images/video-poster.jpg"
-        style="position:absolute;top:50%;left:50%;min-width:100%;min-height:100%;width:auto;height:auto;transform:translate(-50%,-50%) translateZ(0);object-fit:cover;opacity:0;transition:opacity 0.5s;will-change:transform;-webkit-backface-visibility:hidden;backface-visibility:hidden"
-      >
-        <source src="/videos/background.mp4" type="video/mp4" />
-      </video>
+        src="/videos/background.mp4"
+        style="position:absolute;top:50%;left:50%;min-width:100%;min-height:100%;width:auto;height:auto;transform:translate(-50%,-50%) translateZ(0);object-fit:cover;opacity:0;transition:opacity 0.4s;will-change:transform;-webkit-backface-visibility:hidden;backface-visibility:hidden"
+        oncanplay="this.style.opacity='0.6'"
+      ></video>
     </div>
     <div id="bg-overlay" style="position:fixed;inset:0;z-index:2;background:radial-gradient(circle,rgba(0,29,69,0.2) 0%,rgba(0,0,0,0.75) 100%)"></div>
 
     <div id="root"></div>
 
-    <script>
-      // Start video download as soon as poster loads
-      var p = document.getElementById('bg-poster');
-      function sv() {
-        var v = document.getElementById('bg-video');
-        v.preload = 'auto'; v.load();
-        v.oncanplay = function() { v.style.opacity = '0.6'; };
-      }
-      if (p.complete) sv(); else p.onload = sv;
-    </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
