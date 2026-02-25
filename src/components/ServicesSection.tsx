@@ -48,6 +48,7 @@ const ServicesSection = () => {
         { type: "image" as const, src: cftvWork6, alt: "Câmera CFTV Intelbras" },
         { type: "image" as const, src: cftvWork7, alt: "Câmera CFTV instalada" },
         { type: "video" as const, src: "/videos/cftv-video-2.mp4", alt: "Vídeo de trabalho CFTV" },
+        { type: "video" as const, src: "/videos/cftv-video.mp4", alt: "Vídeo de câmera CFTV" },
       ],
     },
     {
@@ -123,7 +124,6 @@ const ServicesSection = () => {
         { type: "image" as const, src: droneWork2, alt: "Inspeção aérea com drone" },
         { type: "image" as const, src: droneWork3, alt: "Drone profissional na maleta" },
         { type: "video" as const, src: "/videos/drone-video.mp4", alt: "Vídeo de trabalho com drone" },
-        { type: "video" as const, src: "/videos/cftv-video.mp4", alt: "Vídeo de trabalho aéreo" },
       ],
     },
   ];
@@ -146,7 +146,7 @@ const ServicesSection = () => {
                 service.reverse ? "md:[&>*:first-child]:order-last" : ""
               }`}
             >
-              <div className={`h-[280px] md:h-[380px] relative rounded-2xl overflow-hidden border border-primary/20 bg-navy ${
+              <div className={`min-h-[280px] md:min-h-[380px] relative rounded-2xl overflow-hidden border border-primary/20 bg-navy ${
                 service.reverse ? "reveal-right" : "reveal-left"
               }`}>
                 {service.images.length > 1 ? (
