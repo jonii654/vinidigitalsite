@@ -1,7 +1,4 @@
-import { useState } from "react";
-
 const WorksSection = () => {
-  const [loadedVideos, setLoadedVideos] = useState<Set<number>>(new Set());
 
   const works = [
     { title: "Trabalho 01", subtitle: "Instalação Residencial", video: "/videos/trabalho-1.mp4", orientation: "vertical" as const },
@@ -9,9 +6,6 @@ const WorksSection = () => {
     { title: "Trabalho 03", subtitle: "Automação de Elite", video: "/videos/trabalho-3.mp4", orientation: "vertical" as const },
   ];
 
-  const handlePlay = (index: number) => {
-    setLoadedVideos(prev => new Set(prev).add(index));
-  };
 
   return (
     <section id="trabalhos" className="py-24 relative z-10 bg-navy/20">
@@ -31,28 +25,13 @@ const WorksSection = () => {
               <div className={`w-full rounded-2xl overflow-hidden border border-primary/20 bg-navy/60 ${
                 work.orientation === "vertical" ? "aspect-[9/16] max-h-[500px]" : "aspect-video"
               }`}>
-                {loadedVideos.has(index) ? (
-                  <video
-                    src={work.video}
-                    controls
-                    autoPlay
-                    playsInline
-                    preload="auto"
-                    className="w-full h-full object-contain bg-black/50"
-                  />
-                ) : (
-                  <div
-                    className="w-full h-full bg-navy/80 flex flex-col items-center justify-center cursor-pointer"
-                    onClick={() => handlePlay(index)}
-                  >
-                    <div className="w-14 h-14 rounded-full bg-primary/80 flex items-center justify-center mb-3">
-                      <svg className="w-7 h-7 text-foreground ml-1" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M8 5v14l11-7z" />
-                      </svg>
-                    </div>
-                    <span className="text-[10px] font-bold uppercase text-muted-foreground">{work.subtitle}</span>
-                  </div>
-                )}
+                <video
+                  src={work.video}
+                  controls
+                  playsInline
+                  preload="metadata"
+                  className="w-full h-full object-contain bg-black/50"
+                />
               </div>
               <p className="text-center mt-4 text-[10px] font-bold uppercase text-muted-foreground">
                 {work.subtitle}
