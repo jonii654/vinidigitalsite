@@ -23,14 +23,14 @@
   <body>
     <!-- Background video rendered BEFORE React for instant visibility -->
     <!-- Poster image loads FIRST, instantly visible -->
-    <div id="bg-video-container" style="position:fixed;inset:0;z-index:1;overflow:hidden;background:linear-gradient(135deg,#001d45 0%,#000c1f 50%,#000 100%)">
+    <div id="bg-video-container" style="position:fixed;inset:0;z-index:1;overflow:hidden;background:linear-gradient(135deg,#001d45 0%,#000c1f 50%,#000 100%);will-change:transform;transform:translateZ(0);-webkit-backface-visibility:hidden;backface-visibility:hidden;contain:layout style paint">
       <img
         id="bg-poster"
         src="/images/video-poster.jpg"
         alt=""
         fetchpriority="high"
         decoding="sync"
-        style="position:absolute;top:50%;left:50%;min-width:100%;min-height:100%;width:auto;height:auto;transform:translate(-50%,-50%);object-fit:cover;opacity:0.6"
+        style="position:absolute;top:50%;left:50%;min-width:100%;min-height:100%;width:auto;height:auto;transform:translate(-50%,-50%) translateZ(0);object-fit:cover;opacity:0.6;-webkit-backface-visibility:hidden;backface-visibility:hidden"
       />
       <video
         id="bg-video"
@@ -38,8 +38,9 @@
         muted
         loop
         playsinline
-        preload="none"
-        style="position:absolute;top:50%;left:50%;min-width:100%;min-height:100%;width:auto;height:auto;transform:translate(-50%,-50%);object-fit:cover;opacity:0;transition:opacity 0.5s"
+        preload="auto"
+        poster="/images/video-poster.jpg"
+        style="position:absolute;top:50%;left:50%;min-width:100%;min-height:100%;width:auto;height:auto;transform:translate(-50%,-50%) translateZ(0);object-fit:cover;opacity:0;transition:opacity 0.5s;will-change:transform;-webkit-backface-visibility:hidden;backface-visibility:hidden"
       >
         <source src="/videos/background.mp4" type="video/mp4" />
       </video>
