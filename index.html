@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preload" href="/images/video-poster.jpg" as="image" fetchpriority="high" />
-    <link rel="preload" href="/videos/background.mp4" as="video" fetchpriority="high" />
+    <link rel="preload" href="/videos/background.mp4" as="fetch" type="video/mp4" crossorigin fetchpriority="high" />
     <link rel="preload" href="/src/assets/vd-logo-new.jpg" as="image" />
     <title>ViniDigital - Segurança & Tecnologia</title>
     <meta name="description" content="ViniDigital - CFTV, Elétrica, Automação e Tecnologia em Abreu e Lima - PE" />
@@ -43,8 +43,9 @@
         poster="/images/video-poster.jpg"
         src="/videos/background.mp4"
         style="position:absolute;top:50%;left:50%;min-width:100%;min-height:100%;width:auto;height:auto;transform:translate(-50%,-50%) translateZ(0);object-fit:cover;opacity:0;transition:opacity 0.4s;will-change:transform;-webkit-backface-visibility:hidden;backface-visibility:hidden"
-        oncanplay="this.style.opacity='0.6'"
+        onloadeddata="this.style.opacity='0.6'"
       ></video>
+      <script>setTimeout(function(){var v=document.getElementById('bg-video');if(v&&v.style.opacity==='0'){v.style.opacity='0.6';v.play().catch(function(){});}},2000);</script>
     </div>
     <div id="bg-overlay" style="position:fixed;inset:0;z-index:2;background:radial-gradient(circle,rgba(0,29,69,0.2) 0%,rgba(0,0,0,0.75) 100%)"></div>
 

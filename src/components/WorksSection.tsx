@@ -1,9 +1,9 @@
 const WorksSection = () => {
   const works = [
-    { subtitle: "Instalação Residencial", video: "/videos/trabalho-action-1.mp4" },
-    { subtitle: "Projeto Corporativo", video: "/videos/trabalho-novo-1.mp4" },
-    { subtitle: "Automação de Elite", video: "/videos/trabalho-action-3.mp4" },
-    { subtitle: "Execução Técnica", video: "/videos/trabalho-novo-2.mp4" },
+    { subtitle: "Instalação Institucional", video: "/videos/trabalho-institucional.mp4" },
+    { subtitle: "Voou de Drone", video: "/videos/trabalho-novo-1.mp4" },
+    { subtitle: "Elétrica de Elite", video: "/videos/trabalho-action-3.mp4" },
+    { subtitle: "Voando na Prática", video: "/videos/trabalho-novo-2.mp4" },
   ];
 
   return (
