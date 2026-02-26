@@ -1,33 +1,57 @@
 
-## Plano de Ajustes Visuais e Novos Videos
 
-### 1. Foto cortada no desktop (ShowcaseBanner)
-O banner "Tecnologia que transforma" usa `object-contain` no mobile e `object-cover` no desktop, cortando a imagem. Vou mudar para `object-contain` em todas as telas e remover a altura fixa, deixando o container se adaptar ao tamanho natural da imagem (sem cortar).
+## Plano Completo de Ajustes
 
-### 2. Secao "Quem somos" (AboutSection)
-Remover a altura fixa `h-[450px]` do container e deixar o carrossel se adaptar ao formato da foto. Usar `w-full` no `<img>` sem `absolute inset-0` para que a moldura acompanhe o tamanho real da imagem.
+### 1. Secao "Quem Somos" - Foto sem faixa azul no desktop
 
-### 3. Secao "Nossos Servicos" (ServicesSection + ServiceCarousel)
-Atualmente os containers de midia tem altura fixa (`h-[280px] md:h-[380px]`) com posicionamento absoluto e `object-contain`, o que gera espacos azuis sobrando.
+**Problema**: A foto vertical (vinidigital-about-new.jpg) ocupa a tela inteira no desktop porque usa `w-full h-auto` sem nenhuma restricao de altura. O layout de 2 colunas (`lg:grid-cols-2`) faz a foto crescer demais.
 
-Vou mudar a abordagem para ser igual a secao "ViniDigital em Acao":
-- Remover alturas fixas do container de midia
-- Usar `w-full` nas imagens/videos sem posicionamento absoluto
-- Adicionar borda laranja `border-2 border-primary` e `rounded-2xl`
-- Atualizar o `ServiceCarousel` para usar o mesmo padrao (sem `absolute`, sem `h-full` fixo)
+**Solucao**: Limitar a altura maxima do container da imagem no desktop com `max-h-[500px]` e usar `object-contain` para que a foto caiba inteira sem cortar. Remover `bg-navy` do container (que causa a faixa azul) e usar `bg-transparent`. Tambem alinhar o container com `flex items-center justify-center` para centralizar a foto.
 
-### 4. Secao "ViniDigital em Acao" (WorksSection)
-- Copiar os 2 videos enviados pelo usuario para `public/videos/`
-- Substituir o 2o video (`trabalho-new.mp4`) pelos 2 novos videos
-- A secao passara a ter 4 videos no total (grid `md:grid-cols-4` ou `md:grid-cols-2 lg:grid-cols-4`)
+### 2. Secao CFTV - Foto repetida
+
+**Problema**: O usuario diz que uma foto esta aparecendo 2 vezes no carrossel. Olhando o codigo, `cftvWork5` aparece so 1 vez, mas visualmente `cftvWork6` ou `cftvWork7` podem ser muito parecidas com `cftvWork5`.
+
+**Solucao**: Substituir uma das fotos parecidas (cftvWork6) por uma imagem diferente que ja existe no projeto mas nao esta sendo usada (cftv-work-3.jpg ou cftv-work-4.jpg). Importar `cftvWork3` ou `cftvWork4` e trocar no array.
+
+### 3. Videos da secao "ViniDigital em Acao" - Substituir e renomear
+
+**Problema**: O usuario quer substituir o 1o video por um novo que ele enviou (VID-20260225-WA0206.mp4) e renomear todos os subtitulos.
+
+**Solucao**:
+- Copiar o video enviado para `public/videos/trabalho-institucional.mp4`
+- Atualizar o array `works` com novos nomes:
+  1. "Instalacao Institucional" - video novo (trabalho-institucional.mp4)
+  2. "Voou de Drone" - trabalho-novo-1.mp4
+  3. "Eletrica de Elite" - trabalho-action-3.mp4
+  4. "Voando na Pratica" - trabalho-novo-2.mp4
+
+### 4. Video de fundo - Otimizacao de carregamento
+
+**Problema**: O video demora 8-10 segundos pra aparecer. O `index.html` ja tem preload e o video inline, mas o `oncanplay` pode nao disparar rapido o suficiente no Chrome/Samsung Internet.
+
+**Solucao**: 
+- Trocar `oncanplay` por `onloadeddata` que dispara mais cedo
+- Adicionar um fallback com JavaScript inline que forca o play e a opacidade apos 2 segundos caso o evento nao dispare
+- Verificar se o `<link rel="preload" as="video">` esta correto (alguns browsers ignoram preload de video; usar `as="fetch"` com `type="video/mp4"` como alternativa)
+
+### 5. Organizacao de videos em pasta dedicada
+
+**Problema**: Todos os videos estao em `public/videos/` misturados. O usuario quer facilitar o carregamento.
+
+**Solucao**: Os videos ja estao em `public/videos/` que e a pasta correta. Nao ha necessidade de criar subpastas pois isso nao melhora performance. O que melhora e:
+- Garantir `preload="metadata"` em todos os videos secundarios (ja esta)
+- Adicionar `loading="lazy"` onde possivel (videos nao suportam nativamente, mas manter fora do viewport inicial ajuda)
+
+---
 
 ### Arquivos alterados
 
 | Arquivo | Mudanca |
 |---|---|
-| `src/components/ShowcaseBanner.tsx` | Remover `object-cover` no desktop, usar `object-contain` sempre, adaptar altura ao conteudo |
-| `src/components/AboutSection.tsx` | Remover `h-[450px]` fixo, moldura se adapta a foto |
-| `src/components/ServicesSection.tsx` | Remover alturas fixas, usar layout fluido com borda laranja |
-| `src/components/ServiceCarousel.tsx` | Remover posicionamento absoluto, usar `w-full` para adaptacao natural |
-| `src/components/WorksSection.tsx` | Adicionar 2 novos videos (total 4), ajustar grid |
-| `public/videos/` | Copiar os 2 novos videos do usuario |
+| `src/components/AboutSection.tsx` | Limitar altura da foto no desktop, remover bg-navy, centralizar |
+| `src/components/ServicesSection.tsx` | Trocar foto duplicada do CFTV por outra |
+| `src/components/WorksSection.tsx` | Novos nomes + novo video |
+| `index.html` | Fallback JS para o video de fundo carregar mais rapido |
+| `public/videos/` | Copiar video novo do usuario |
+
