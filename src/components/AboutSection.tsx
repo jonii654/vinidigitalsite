@@ -51,23 +51,23 @@ const AboutSection = () => {
           </p>
         </div>
         
-        <div className="reveal">
-          <div className="relative rounded-2xl overflow-hidden border-2 border-primary/50 bg-navy">
+        <div className="reveal flex items-center justify-center">
+          <div className="relative rounded-2xl overflow-hidden border-2 border-primary/50 bg-transparent lg:max-h-[500px]">
             <div className="overflow-hidden" ref={emblaRef}>
               <div className="flex">
                 {images.map((img, i) => (
-                  <div key={i} className="flex-[0_0_100%] min-w-0">
+                  <div key={i} className="flex-[0_0_100%] min-w-0 flex items-center justify-center">
                     <img
                       src={img.src}
                       alt={img.alt}
                       loading="lazy"
-                      className="w-full h-auto"
+                      className="w-full h-auto lg:max-h-[500px] lg:w-auto lg:mx-auto object-contain"
                     />
                   </div>
                 ))}
               </div>
             </div>
-            <div className="absolute inset-0 bg-gradient-to-t from-navy/90 via-transparent to-transparent pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent pointer-events-none" />
             
             <button
               onClick={scrollPrev}
