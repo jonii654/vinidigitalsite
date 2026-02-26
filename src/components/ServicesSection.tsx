@@ -43,7 +43,7 @@ const ServicesSection = () => {
         { type: "image" as const, src: cftvWork5, alt: "Câmera CFTV externa" },
         { type: "image" as const, src: cftvWork3, alt: "Câmera CFTV instalação completa" },
         { type: "image" as const, src: cftvWork7, alt: "Câmera CFTV instalada" },
-        { type: "video" as const, src: "/videos/cftv-video-2.mp4", alt: "Vídeo de trabalho CFTV" },
+        
         { type: "video" as const, src: "/videos/cftv-new-1.mp4", alt: "Vídeo CFTV novo 1" },
         { type: "video" as const, src: "/videos/cftv-new-2.mp4", alt: "Vídeo CFTV novo 2" },
       ],
