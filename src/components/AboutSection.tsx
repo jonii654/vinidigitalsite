@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import vinidigitalAbout from "@/assets/vinidigital-about-new.jpg";
@@ -13,7 +13,20 @@ const AboutSection = () => {
   ];
 
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const [wrapperHeight, setWrapperHeight] = useState<number | undefined>(undefined);
+  const slidesRef = useRef<(HTMLDivElement | null)[]>([]);
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
+
+  const updateHeight = useCallback(() => {
+    const slide = slidesRef.current[selectedIndex];
+    if (slide) {
+      const media = slide.querySelector("img");
+      if (media) {
+        const h = (media as HTMLElement).offsetHeight || (media as HTMLElement).scrollHeight;
+        if (h > 0) setWrapperHeight(h);
+      }
+    }
+  }, [selectedIndex]);
 
   const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
   const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
@@ -29,6 +42,12 @@ const AboutSection = () => {
     emblaApi.on("select", onSelect);
     return () => { emblaApi.off("select", onSelect); };
   }, [emblaApi, onSelect]);
+
+  useEffect(() => {
+    updateHeight();
+    window.addEventListener("resize", updateHeight);
+    return () => window.removeEventListener("resize", updateHeight);
+  }, [updateHeight]);
 
   return (
     <section id="apresentacao" className="py-20 relative z-10 overflow-hidden">
@@ -51,17 +70,25 @@ const AboutSection = () => {
           </p>
         </div>
         
-        <div className="reveal flex items-center justify-center">
-          <div className="relative rounded-2xl overflow-hidden border-2 border-primary/50 bg-transparent lg:max-h-[500px]">
+        <div className="reveal">
+          <div
+            className="relative rounded-2xl overflow-hidden border-2 border-primary bg-transparent transition-[height] duration-300 ease-in-out"
+            style={wrapperHeight ? { height: wrapperHeight } : undefined}
+          >
             <div className="overflow-hidden" ref={emblaRef}>
               <div className="flex">
                 {images.map((img, i) => (
-                  <div key={i} className="flex-[0_0_100%] min-w-0 flex items-center justify-center">
+                  <div
+                    key={i}
+                    className="flex-[0_0_100%] min-w-0"
+                    ref={(el) => { slidesRef.current[i] = el; }}
+                  >
                     <img
                       src={img.src}
                       alt={img.alt}
                       loading="lazy"
-                      className="w-full h-auto lg:max-h-[500px] lg:w-auto lg:mx-auto object-contain"
+                      className="w-full h-auto block"
+                      onLoad={updateHeight}
                     />
                   </div>
                 ))}
