@@ -20,6 +20,8 @@ import solarWork3 from "@/assets/solar-work-3.jpg";
 import droneWork1 from "@/assets/drone-work-1.jpg";
 import droneWork2 from "@/assets/drone-work-2.jpg";
 import droneWork3 from "@/assets/drone-work-3.jpg";
+import cftvWork8 from "@/assets/cftv-work-8.jpg";
+import cftvWork9 from "@/assets/cftv-work-9.jpg";
 
 type MediaItem = { type: "image" | "video"; src: string; alt: string };
 
@@ -43,6 +45,8 @@ const ServicesSection = () => {
         { type: "image" as const, src: cftvWork5, alt: "Câmera CFTV externa" },
         { type: "image" as const, src: cftvWork3, alt: "Câmera CFTV instalação completa" },
         { type: "image" as const, src: cftvWork7, alt: "Câmera CFTV instalada" },
+        { type: "image" as const, src: cftvWork8, alt: "Câmeras CFTV Intelbras no poste" },
+        { type: "image" as const, src: cftvWork9, alt: "Técnico instalando câmera CFTV" },
         
         { type: "video" as const, src: "/videos/trabalho-institucional.mp4", alt: "Vídeo institucional CFTV" },
         { type: "video" as const, src: "/videos/cftv-new-1.mp4", alt: "Vídeo CFTV novo 1" },
