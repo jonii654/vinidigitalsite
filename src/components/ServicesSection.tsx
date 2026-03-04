@@ -49,8 +49,8 @@ const ServicesSection = () => {
         { type: "image" as const, src: cftvWork9, alt: "Técnico instalando câmera CFTV" },
         
         { type: "video" as const, src: "/videos/trabalho-institucional.mp4", alt: "Vídeo institucional CFTV" },
-        { type: "video" as const, src: "/videos/cftv-new-1.mp4", alt: "Vídeo CFTV novo 1" },
         { type: "video" as const, src: "/videos/cftv-new-2.mp4", alt: "Vídeo CFTV novo 2" },
+        { type: "video" as const, src: "/videos/cftv-new-1.mp4", alt: "Vídeo CFTV novo 1" },
       ],
     },
     {
