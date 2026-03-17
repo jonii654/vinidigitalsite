@@ -4,12 +4,18 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import vinidigitalAbout from "@/assets/vinidigital-about-new.jpg";
 import equipe1 from "@/assets/equipe-1.jpg";
 import equipe2 from "@/assets/equipe-2.jpg";
+import equipe3 from "@/assets/equipe-3.jpg";
+
+type MediaItem = { type: "image" | "video"; src: string; alt: string };
 
 const AboutSection = () => {
-  const images = [
-    { src: vinidigitalAbout, alt: "ViniDigital - Soluções em Elétrica, Alarmes, Câmeras e Automação" },
-    { src: equipe1, alt: "Equipe ViniDigital em campo" },
-    { src: equipe2, alt: "Equipe ViniDigital - selfie profissional" },
+  const items: MediaItem[] = [
+    { type: "video", src: "/videos/about-video-1.mp4", alt: "Vídeo institucional ViniDigital" },
+    { type: "image", src: vinidigitalAbout, alt: "ViniDigital - Soluções em Elétrica, Alarmes, Câmeras e Automação" },
+    { type: "image", src: equipe3, alt: "Equipe ViniDigital em obra" },
+    { type: "video", src: "/videos/about-video-2.mp4", alt: "Vídeo equipe ViniDigital" },
+    { type: "image", src: equipe1, alt: "Equipe ViniDigital em campo" },
+    { type: "image", src: equipe2, alt: "Equipe ViniDigital - selfie profissional" },
   ];
 
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -20,7 +26,7 @@ const AboutSection = () => {
   const updateHeight = useCallback(() => {
     const slide = slidesRef.current[selectedIndex];
     if (slide) {
-      const media = slide.querySelector("img");
+      const media = slide.querySelector("img, video");
       if (media) {
         const h = (media as HTMLElement).offsetHeight || (media as HTMLElement).scrollHeight;
         if (h > 0) setWrapperHeight(h);
@@ -77,19 +83,30 @@ const AboutSection = () => {
           >
             <div className="overflow-hidden" ref={emblaRef}>
               <div className="flex">
-                {images.map((img, i) => (
+                {items.map((item, i) => (
                   <div
                     key={i}
                     className="flex-[0_0_100%] min-w-0"
                     ref={(el) => { slidesRef.current[i] = el; }}
                   >
-                    <img
-                      src={img.src}
-                      alt={img.alt}
-                      loading="lazy"
-                      className="w-full h-auto block"
-                      onLoad={updateHeight}
-                    />
+                    {item.type === "image" ? (
+                      <img
+                        src={item.src}
+                        alt={item.alt}
+                        loading="lazy"
+                        className="w-full h-auto block"
+                        onLoad={updateHeight}
+                      />
+                    ) : (
+                      <video
+                        src={item.src}
+                        controls
+                        playsInline
+                        preload="metadata"
+                        className="w-full h-auto block will-change-transform"
+                        onLoadedMetadata={updateHeight}
+                      />
+                    )}
                   </div>
                 ))}
               </div>
@@ -99,20 +116,20 @@ const AboutSection = () => {
             <button
               onClick={scrollPrev}
               className="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-background/60 hover:bg-background/80 text-foreground rounded-full p-2 transition-colors"
-              aria-label="Foto anterior"
+              aria-label="Mídia anterior"
             >
               <ChevronLeft className="w-5 h-5" />
             </button>
             <button
               onClick={scrollNext}
               className="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-background/60 hover:bg-background/80 text-foreground rounded-full p-2 transition-colors"
-              aria-label="Próxima foto"
+              aria-label="Próxima mídia"
             >
               <ChevronRight className="w-5 h-5" />
             </button>
 
             <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2 z-10">
-              {images.map((_, i) => (
+              {items.map((_, i) => (
                 <button
                   key={i}
                   onClick={() => emblaApi?.scrollTo(i)}
