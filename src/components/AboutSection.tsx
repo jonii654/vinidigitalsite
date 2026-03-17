@@ -94,7 +94,7 @@ const AboutSection = () => {
                         src={item.src}
                         alt={item.alt}
                         loading="lazy"
-                        className="w-full h-auto block"
+                        className={`w-full block ${item.crop ? "aspect-[16/9] object-cover" : "h-auto"}`}
                         onLoad={updateHeight}
                       />
                     ) : (
