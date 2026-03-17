@@ -94,7 +94,7 @@ const AboutSection = () => {
                         src={item.src}
                         alt={item.alt}
                         loading="lazy"
-                        className="w-full h-auto block"
+                        className="w-full aspect-[4/3] object-cover block"
                         onLoad={updateHeight}
                       />
                     ) : (
@@ -103,7 +103,7 @@ const AboutSection = () => {
                         controls
                         playsInline
                         preload="metadata"
-                        className="w-full h-auto block will-change-transform"
+                        className="w-full aspect-[4/3] object-cover block will-change-transform"
                         onLoadedMetadata={updateHeight}
                       />
                     )}
