@@ -51,6 +51,8 @@ const ServicesSection = () => {
         { type: "video" as const, src: "/videos/trabalho-institucional.mp4", alt: "Vídeo institucional CFTV" },
         { type: "video" as const, src: "/videos/cftv-new-2.mp4", alt: "Vídeo CFTV novo 2" },
         { type: "video" as const, src: "/videos/cftv-new-1.mp4", alt: "Vídeo CFTV novo 1" },
+        { type: "video" as const, src: "/videos/cftv-video-3.mp4", alt: "Vídeo CFTV trabalho 3" },
+        { type: "video" as const, src: "/videos/cftv-video-4.mp4", alt: "Vídeo CFTV trabalho 4" },
       ],
     },
     {
