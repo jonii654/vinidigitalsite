@@ -118,10 +118,9 @@ const ServicesSection = () => {
       images: [
         { type: "image" as const, src: droneWork1, alt: "Trabalho com drone" },
         { type: "image" as const, src: droneWork2, alt: "Inspeção aérea com drone" },
-        { type: "video" as const, src: "/videos/drone-video.mp4", alt: "Vídeo de trabalho com drone" },
         { type: "video" as const, src: "/videos/drone-video-4.mp4", alt: "Vídeo drone trabalho 4" },
         { type: "video" as const, src: "/videos/drone-video-5.mp4", alt: "Vídeo drone trabalho 5" },
-        { type: "video" as const, src: "/videos/drone-video-6.mp4", alt: "Vídeo drone trabalho 6" },
+        { type: "video" as const, src: "/videos/drone-video-7.mp4", alt: "Vídeo drone trabalho 7" },
       ],
     },
   ];
