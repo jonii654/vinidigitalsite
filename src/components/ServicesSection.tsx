@@ -1,9 +1,7 @@
 import { Button } from "@/components/ui/button";
 import ServiceCarousel from "@/components/ServiceCarousel";
-import cftvWork from "@/assets/cftv-work.jpg";
-import cftvWork2 from "@/assets/cftv-work-2.jpg";
-import cftvWork5 from "@/assets/cftv-work-5.jpg";
 import cftvWork3 from "@/assets/cftv-work-3.jpg";
+import cftvWork7 from "@/assets/cftv-work-7.jpg";
 import cftvWork7 from "@/assets/cftv-work-7.jpg";
 import eletricaWork from "@/assets/eletrica-work.jpg";
 import eletricaWork2 from "@/assets/eletrica-work-2.jpg";
