@@ -1,8 +1,5 @@
 import { Button } from "@/components/ui/button";
 import ServiceCarousel from "@/components/ServiceCarousel";
-import cftvWork from "@/assets/cftv-work.jpg";
-import cftvWork2 from "@/assets/cftv-work-2.jpg";
-import cftvWork5 from "@/assets/cftv-work-5.jpg";
 import cftvWork3 from "@/assets/cftv-work-3.jpg";
 import cftvWork7 from "@/assets/cftv-work-7.jpg";
 import eletricaWork from "@/assets/eletrica-work.jpg";
@@ -40,9 +37,6 @@ const ServicesSection = () => {
       variant: "primary" as const,
       reverse: false,
       images: [
-        { type: "image" as const, src: cftvWork, alt: "Instalação profissional de CFTV" },
-        { type: "image" as const, src: cftvWork2, alt: "Câmera Intelbras com grade" },
-        { type: "image" as const, src: cftvWork5, alt: "Câmera CFTV externa" },
         { type: "image" as const, src: cftvWork3, alt: "Câmera CFTV instalação completa" },
         { type: "image" as const, src: cftvWork7, alt: "Câmera CFTV instalada" },
         { type: "image" as const, src: cftvWork8, alt: "Câmeras CFTV Intelbras no poste" },
@@ -51,8 +45,6 @@ const ServicesSection = () => {
         { type: "video" as const, src: "/videos/trabalho-institucional.mp4", alt: "Vídeo institucional CFTV" },
         { type: "video" as const, src: "/videos/cftv-new-2.mp4", alt: "Vídeo CFTV novo 2" },
         { type: "video" as const, src: "/videos/cftv-new-1.mp4", alt: "Vídeo CFTV novo 1" },
-        { type: "video" as const, src: "/videos/cftv-video-3.mp4", alt: "Vídeo CFTV trabalho 3" },
-        { type: "video" as const, src: "/videos/cftv-video-4.mp4", alt: "Vídeo CFTV trabalho 4" },
       ],
     },
     {
@@ -127,7 +119,6 @@ const ServicesSection = () => {
         { type: "image" as const, src: droneWork1, alt: "Trabalho com drone" },
         { type: "image" as const, src: droneWork2, alt: "Inspeção aérea com drone" },
         { type: "video" as const, src: "/videos/drone-video.mp4", alt: "Vídeo de trabalho com drone" },
-        { type: "video" as const, src: "/videos/drone-video-2.mp4", alt: "Vídeo drone trabalho 2" },
         { type: "video" as const, src: "/videos/drone-video-3.mp4", alt: "Vídeo drone trabalho 3" },
       ],
     },
