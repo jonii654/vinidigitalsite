@@ -3,6 +3,8 @@ const WorksSection = () => {
     { subtitle: "Instalação Profissional", video: "/videos/trabalho-institucional-novo.mp4" },
     { subtitle: "Elétrica Profissional", video: "/videos/trabalho-action-3.mp4" },
     { subtitle: "Voo e Inspeção", video: "/videos/trabalho-novo-2.mp4" },
+    { subtitle: "Novo Projeto 1", video: "/videos/acao-novo-1.mp4" },
+    { subtitle: "Novo Projeto 2", video: "/videos/acao-novo-2.mp4" },
   ];
 
   return (
