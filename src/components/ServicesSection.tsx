@@ -116,10 +116,10 @@ const ServicesSection = () => {
       variant: "outline" as const,
       reverse: false,
       images: [
+        { type: "video" as const, src: "/videos/drone-video-5.mp4", alt: "Vídeo drone trabalho 5" },
         { type: "image" as const, src: droneWork1, alt: "Trabalho com drone" },
         { type: "image" as const, src: droneWork2, alt: "Inspeção aérea com drone" },
         { type: "video" as const, src: "/videos/drone-video-4.mp4", alt: "Vídeo drone trabalho 4" },
-        { type: "video" as const, src: "/videos/drone-video-5.mp4", alt: "Vídeo drone trabalho 5" },
         { type: "video" as const, src: "/videos/drone-video-7.mp4", alt: "Vídeo drone trabalho 7" },
       ],
     },
