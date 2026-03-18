@@ -5,6 +5,9 @@ const WorksSection = () => {
     { subtitle: "Voo e Inspeção", video: "/videos/trabalho-novo-2.mp4" },
     { subtitle: "Instalação CFTV", video: "/videos/acao-novo-1.mp4" },
     { subtitle: "Instalando Câmeras", video: "/videos/acao-novo-2.mp4" },
+    { subtitle: "Projeto Residencial", video: "/videos/acao-novo-3.mp4" },
+    { subtitle: "Manutenção Técnica", video: "/videos/acao-novo-4.mp4" },
+    { subtitle: "Execução em Campo", video: "/videos/acao-novo-5.mp4" },
   ];
 
   return (
