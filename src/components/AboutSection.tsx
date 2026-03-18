@@ -10,10 +10,8 @@ type MediaItem = { type: "image" | "video"; src: string; alt: string; crop?: boo
 
 const AboutSection = () => {
   const items: MediaItem[] = [
-    { type: "video", src: "/videos/about-video-1.mp4", alt: "Vídeo institucional ViniDigital" },
     { type: "image", src: vinidigitalAbout, alt: "ViniDigital - Soluções em Elétrica, Alarmes, Câmeras e Automação" },
     { type: "image", src: equipe3, alt: "Equipe ViniDigital em obra", crop: true },
-    { type: "video", src: "/videos/about-video-2.mp4", alt: "Vídeo equipe ViniDigital" },
     { type: "image", src: equipe1, alt: "Equipe ViniDigital em campo" },
     { type: "image", src: equipe2, alt: "Equipe ViniDigital - selfie profissional" },
   ];
